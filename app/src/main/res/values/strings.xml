@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ITPLN Sehat</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="design_by">Design by AlRausy</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="daftar">REGISTER</string>
+    <string name="email">Email</string>
+    <string name="fullName">Full Name</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="noAccount">Pengguna Baru? Daftar Sekarang</string>
+    <string name="haveAccount">Sudah Punya Akun? Sign In</string>
+    <string name="Born">Tanggal Lahir :</string>
+</resources>
