@@ -18,12 +18,12 @@ class Login : AppCompatActivity() {
         val Username = findViewById<EditText>(R.id.username) //mencari id EditText 'username' di file activity_login
         val Password = findViewById<EditText>(R.id.password) //mencari id EditText 'password' di file activity_login
 
-        tvDaftar.setOnClickListener({
+        tvDaftar.setOnClickListener{
             val intent = Intent(this, Daftar::class.java)
             startActivity(intent)
-        })
+        }
 
-        buttonLogin.setOnClickListener({
+        buttonLogin.setOnClickListener{
             if (Username.text.toString().isNotEmpty() and Password.text.toString().isNotEmpty()){
                 val intent = Intent(this, Beranda::class.java)
                 startActivity(intent)
@@ -33,6 +33,6 @@ class Login : AppCompatActivity() {
                 val toast = Toast.makeText(applicationContext, "Lengkapi Username dan Password", Toast.LENGTH_LONG)
                 toast.show()
             }
-        })
+        }
     }
 }
