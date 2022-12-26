@@ -31,12 +31,12 @@ class Daftar : AppCompatActivity() {
         val tv_SignIn = findViewById<TextView>(R.id.SignIn_daftar) //mencari id TextView 'SignIn_daftar' di file activity_daftar
         tvDatePicker = findViewById(R.id.born) //mencari id Button 'born' di file activity_daftar
 
-        tv_SignIn.setOnClickListener({
+        tv_SignIn.setOnClickListener{
             val intent = Intent(this, Login::class.java)
             startActivity(intent)
-        })
+        }
 
-        Button_SignUp.setOnClickListener({
+        Button_SignUp.setOnClickListener{
             if (Username_daftar.text.toString().isNotEmpty() and
                 Password_daftar.text.toString().isNotEmpty() and
                 Email.text.toString().isNotEmpty() and
@@ -50,7 +50,7 @@ class Daftar : AppCompatActivity() {
                 val toast = Toast.makeText(applicationContext, "Lengkapi Seluruh Data!", Toast.LENGTH_LONG)
                 toast.show()
             }
-        })
+        }
 
         val myCalendar = Calendar.getInstance()
         val datePicker = DatePickerDialog.OnDateSetListener { view, year, month,
