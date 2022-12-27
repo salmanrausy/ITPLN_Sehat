@@ -6,6 +6,5 @@ class Dokter {
     constructor(nama : String, spesialis: String  ){
         this.nama = nama
         this.spesialis = spesialis
-
     }
 }

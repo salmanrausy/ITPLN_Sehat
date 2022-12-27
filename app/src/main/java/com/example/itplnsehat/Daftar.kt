@@ -24,10 +24,11 @@ class Daftar : AppCompatActivity() {
         btnDatePicker = findViewById<Button>(R.id.btn_DatePicker) //mencari id Button 'cardDatePicker' di file activity_daftar
         //Find Id EditText
         val Full_Name = findViewById<EditText>(R.id.fullName) //mencari id EditText 'fullname' di file activity_daftar
-        val Username_daftar = findViewById<EditText>(R.id.username_daftar) //mencari id EditText 'username_daftar' di file activity_daftar
+        val nomor_daftar = findViewById<EditText>(R.id.Nomor_daftar) //mencari id EditText 'username_daftar' di file activity_daftar
         val Password_daftar = findViewById<EditText>(R.id.password_daftar) //mencari id EditText 'password_daftar' di file activity_daftar
         val Email = findViewById<EditText>(R.id.Email) //mencari id TextView 'Email' di file activity_daftar
         //Find id TextView
+        val myCalendar = Calendar.getInstance()
         val tv_SignIn = findViewById<TextView>(R.id.SignIn_daftar) //mencari id TextView 'SignIn_daftar' di file activity_daftar
         tvDatePicker = findViewById(R.id.born) //mencari id Button 'born' di file activity_daftar
 
@@ -37,11 +38,14 @@ class Daftar : AppCompatActivity() {
         }
 
         Button_SignUp.setOnClickListener{
-            if (Username_daftar.text.toString().isNotEmpty() and
+            if (nomor_daftar.text.toString().isNotEmpty() and
                 Password_daftar.text.toString().isNotEmpty() and
                 Email.text.toString().isNotEmpty() and
                 Full_Name.text.toString().isNotEmpty())
             {
+                val user  = User(Full_Name.text.toString(),Email.text.toString(),nomor_daftar.text.toString(), Password_daftar.text.toString())
+                val db = DataHelper(this)
+                db.insertData(user,getDate(myCalendar))
                 val intent = Intent(this, Beranda::class.java)
                 startActivity(intent)
             }
@@ -52,7 +56,7 @@ class Daftar : AppCompatActivity() {
             }
         }
 
-        val myCalendar = Calendar.getInstance()
+
         val datePicker = DatePickerDialog.OnDateSetListener { view, year, month,
                                                               dayofmonth ->
             myCalendar.set(Calendar.YEAR, year)
@@ -61,14 +65,21 @@ class Daftar : AppCompatActivity() {
             updateLable(myCalendar)
         }
         btnDatePicker.setOnClickListener{
-            DatePickerDialog(this, datePicker, myCalendar.get(Calendar.YEAR),
+            DatePickerDialog(this, datePicker,
+                myCalendar.get(Calendar.YEAR),
                 myCalendar.get(Calendar.MONTH),
                 myCalendar.get(Calendar.DAY_OF_MONTH)).show()
         }
     }
+
     private fun updateLable(myCalendar: Calendar){
         val myformat = "dd-MM-yyyy"
         val sdf = SimpleDateFormat(myformat, Locale.UK)
         tvDatePicker.setText("Tanggal Lahir : " + sdf.format(myCalendar.time))
+    }
+    private fun getDate(myCalendar: Calendar): String{
+        val myformat = "dd-MM-yyyy"
+        val sdf = SimpleDateFormat(myformat, Locale.UK)
+        return sdf.format(myCalendar.time)
     }
 }

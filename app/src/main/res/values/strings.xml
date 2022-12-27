@@ -16,4 +16,5 @@
     <string name="noAccount">Pengguna Baru? Daftar Sekarang</string>
     <string name="haveAccount">Sudah Punya Akun? Sign In</string>
     <string name="Born">Tanggal Lahir :</string>
+    <string name="nomor_telp">Nomor Telpon</string>
 </resources>
