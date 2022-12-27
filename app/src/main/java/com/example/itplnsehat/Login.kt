@@ -19,8 +19,7 @@ class Login : AppCompatActivity() {
         val buttonLogin = findViewById<Button>(R.id.btnLogin) //mencari id Button 'cardSubmit' di file activity_login
         val Email = findViewById<EditText>(R.id.email) //mencari id EditText 'username' di file activity_login
         val Password = findViewById<EditText>(R.id.password) //mencari id EditText 'password' di file activity_login
-        val dbhelp=DataHelper(applicationContext)
-        val db=dbhelp.readableDatabase
+        val db = DataHelper(this)
         tvDaftar.setOnClickListener{
             val intent = Intent(this, Daftar::class.java)
             startActivity(intent)
@@ -28,12 +27,14 @@ class Login : AppCompatActivity() {
 
         buttonLogin.setOnClickListener{
             if (Email.text.toString().isNotEmpty() and Password.text.toString().isNotEmpty()) {
-                val query = "SELECT * FROM user WHERE email='" + Email.text.toString() + "' AND password='" + Password.text.toString() + "'"
-                val rs = db.rawQuery(query, null)
-                if (rs.moveToFirst()) {
-                    val idUser = rs.getInt(rs.getColumnIndex("id_user"))
-                    rs.close()
-                    startActivity(Intent(this, Beranda::class.java).putExtra("id_user", idUser))
+                val idUser = db.checkUser(Email.text.toString(),Password.text.toString())
+                Toast.makeText(applicationContext,"id user adalah " + idUser,Toast.LENGTH_LONG).show()
+                if (idUser>0){
+                    val bundle = Bundle()
+                    intent = Intent(this, Beranda::class.java)
+                    bundle.putString("iduser", idUser.toString())
+                    intent.putExtras(bundle)
+                    startActivity(intent)
                 }
             }
             else {

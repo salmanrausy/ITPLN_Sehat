@@ -46,7 +46,7 @@ class Daftar : AppCompatActivity() {
                 val user  = User(Full_Name.text.toString(),Email.text.toString(),nomor_daftar.text.toString(), Password_daftar.text.toString())
                 val db = DataHelper(this)
                 db.insertUser(user,getDate(myCalendar))
-                val intent = Intent(this, Beranda::class.java)
+                val intent = Intent(this, Login::class.java)
                 startActivity(intent)
             }
 
@@ -78,7 +78,7 @@ class Daftar : AppCompatActivity() {
         tvDatePicker.setText("Tanggal Lahir : " + sdf.format(myCalendar.time))
     }
     private fun getDate(myCalendar: Calendar): String{
-        val myformat = "dd-MM-yyyy"
+        val myformat = "yyyy-MM-dd"
         val sdf = SimpleDateFormat(myformat, Locale.UK)
         return sdf.format(myCalendar.time)
     }

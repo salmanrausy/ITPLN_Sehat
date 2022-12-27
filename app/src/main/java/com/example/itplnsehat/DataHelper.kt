@@ -1,5 +1,7 @@
 package com.example.itplnsehat
 
+
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -7,7 +9,9 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.widget.Toast
 
 class DataHelper (var context: Context) : SQLiteOpenHelper(context,
-    "rumah_sakit", null,1) {
+    "rumah_sakit", null,1)
+    {
+        val db = this.writableDatabase
         override fun onCreate(db: SQLiteDatabase?) {
             val createTable = "CREATE TABLE user ( id_user INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     " nama VARCHAR(50), " +
@@ -21,7 +25,6 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
         Int) {
             TODO("Not implemented")}
         fun insertUser (user: User, tgl : String) {
-            val db = this.writableDatabase
             val cv = ContentValues()
             cv.put("nama", user.nama)
             cv.put("nomor", user.nomor)
@@ -35,32 +38,16 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
                 Toast.makeText(context, "SUCCESS", Toast.LENGTH_SHORT).show()
         }
 
-        fun checkUser(email: String, password: String): Boolean {
-            // array of columns to fetch
-            val columns = arrayOf("id_user")
-            val db = this.readableDatabase
-            // selection criteria
-            val selection = "email= ? AND password = ?"
-            // selection arguments
-            val selectionArgs = arrayOf(email, password)
-            // query user table with conditions
-            /**
-             * Here query function is used to fetch records from user table this function works like we use sql query.
-             * SQL query equivalent to this query function is
-             * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com' AND user_password = 'qwerty';
-             */
-            val cursor = db.query("user",//Table to query
-                columns, //columns to return
-                selection, //columns for the WHERE clause
-                selectionArgs, //The values for the WHERE clause
-                null,  //group the rows
-                null, //filter by row groups
-                null) //The sort order
-            val cursorCount = cursor.count
-            cursor.close()
-            db.close()
-            if (cursorCount > 0)
-                return true
-            return false
+
+        @SuppressLint("Range")
+        fun checkUser(email: String, password: String): Int {
+            val query = "SELECT * FROM user WHERE email='" + email + "' AND password='" + password + "'"
+            val rs = db.rawQuery(query, null)
+            if (rs.moveToFirst()) {
+                val idUser = rs.getInt(rs.getColumnIndex("id_user"))
+                rs.close()
+                return idUser
+            }
+            return -1
         }
     }
