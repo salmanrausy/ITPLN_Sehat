@@ -1,6 +1,6 @@
 package com.example.itplnsehat
 
-class user {
+class User {
     var nama : String = ""
     var nomor : String = ""
     var password : String = ""
