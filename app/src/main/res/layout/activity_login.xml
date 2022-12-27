@@ -48,14 +48,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_gravity="center"
             android:background="@drawable/bgedittext"
             android:drawableStart="@drawable/name"
             android:fontFamily="sans-serif-condensed-medium"
-            android:hint="@string/username"
+            android:hint="@string/email"
             android:paddingLeft="15dp"
             android:paddingEnd="15dp"
             android:textSize="18sp" />

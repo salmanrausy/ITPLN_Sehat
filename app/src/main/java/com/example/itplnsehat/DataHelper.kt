@@ -20,11 +20,12 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
         override fun onUpgrade(db: SQLiteDatabase?,oldVersion: Int,newVersion:
         Int) {
             TODO("Not implemented")}
-        fun insertData (user: User, tgl : String) {
+        fun insertUser (user: User, tgl : String) {
             val db = this.writableDatabase
             val cv = ContentValues()
             cv.put("nama", user.nama)
             cv.put("nomor", user.nomor)
+            cv.put("email",user.email)
             cv.put("tglLahir" , tgl)
             cv.put("password",user.password)
             val result = db.insert("user", null, cv)
@@ -32,5 +33,34 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
                 Toast.makeText(context, "FAILED", Toast.LENGTH_SHORT).show()
             else
                 Toast.makeText(context, "SUCCESS", Toast.LENGTH_SHORT).show()
+        }
+
+        fun checkUser(email: String, password: String): Boolean {
+            // array of columns to fetch
+            val columns = arrayOf("id_user")
+            val db = this.readableDatabase
+            // selection criteria
+            val selection = "email= ? AND password = ?"
+            // selection arguments
+            val selectionArgs = arrayOf(email, password)
+            // query user table with conditions
+            /**
+             * Here query function is used to fetch records from user table this function works like we use sql query.
+             * SQL query equivalent to this query function is
+             * SELECT user_id FROM user WHERE user_email = 'jack@androidtutorialshub.com' AND user_password = 'qwerty';
+             */
+            val cursor = db.query("user",//Table to query
+                columns, //columns to return
+                selection, //columns for the WHERE clause
+                selectionArgs, //The values for the WHERE clause
+                null,  //group the rows
+                null, //filter by row groups
+                null) //The sort order
+            val cursorCount = cursor.count
+            cursor.close()
+            db.close()
+            if (cursorCount > 0)
+                return true
+            return false
         }
     }

@@ -45,7 +45,7 @@ class Daftar : AppCompatActivity() {
             {
                 val user  = User(Full_Name.text.toString(),Email.text.toString(),nomor_daftar.text.toString(), Password_daftar.text.toString())
                 val db = DataHelper(this)
-                db.insertData(user,getDate(myCalendar))
+                db.insertUser(user,getDate(myCalendar))
                 val intent = Intent(this, Beranda::class.java)
                 startActivity(intent)
             }

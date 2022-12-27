@@ -2,11 +2,17 @@ package com.example.itplnsehat
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 
 class Beranda : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_beranda)
     }
+
+
+    val tvBeranda = findViewById<TextView>(R.id.username)
+
+
 
 }
