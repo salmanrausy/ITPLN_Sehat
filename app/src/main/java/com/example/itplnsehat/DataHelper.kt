@@ -50,4 +50,10 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
             }
             return -1
         }
+
+//        fun selectId(id : Int) {
+//            val query = "SELECT * FROM user WHERE id_user=$id"
+//            val rs = db.rawQuery(query,null)
+//            return arrayOf()
+//        }
     }

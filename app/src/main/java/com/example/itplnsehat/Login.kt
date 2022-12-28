@@ -28,7 +28,6 @@ class Login : AppCompatActivity() {
         buttonLogin.setOnClickListener{
             if (Email.text.toString().isNotEmpty() and Password.text.toString().isNotEmpty()) {
                 val idUser = db.checkUser(Email.text.toString(),Password.text.toString())
-                Toast.makeText(applicationContext,"id user adalah " + idUser,Toast.LENGTH_LONG).show()
                 if (idUser>0){
                     val bundle = Bundle()
                     intent = Intent(this, Beranda::class.java)
