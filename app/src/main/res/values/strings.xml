@@ -4,7 +4,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="design_by">Design by AlRausy</string>
+    <string name="design_by">Made with ❤ </string>
     <string name="sign_in">SIGN IN</string>
     <string name="sign_up">SIGN UP</string>
     <string name="daftar">REGISTER</string>
@@ -16,4 +16,11 @@
     <string name="noAccount">Pengguna Baru? Daftar Sekarang</string>
     <string name="haveAccount">Sudah Punya Akun? Sign In</string>
     <string name="Born">Tanggal Lahir :</string>
+    <string name="nomor_telp">Nomor Telpon</string>
+    <string name="profile_user">Profile User</string>
+    <string name="nama">Nama :</string>
+    <string name="emailBeranda">Email :</string>
+    <string name="nomorBeranda">Nomor :</string>
+    <string name="spasi" />
+    <string name="tgl_lahir">Tgl Lahir :</string>
 </resources>
