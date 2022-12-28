@@ -11,7 +11,7 @@ import android.widget.Toast
 class DataHelper (var context: Context) : SQLiteOpenHelper(context,
     "rumah_sakit", null,1)
     {
-        val db = this.writableDatabase
+        private  val db = this.writableDatabase
         override fun onCreate(db: SQLiteDatabase?) {
             val createTable = "CREATE TABLE user ( id_user INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     " nama VARCHAR(50), " +
@@ -38,7 +38,6 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
                 Toast.makeText(context, "SUCCESS", Toast.LENGTH_SHORT).show()
         }
 
-
         @SuppressLint("Range")
         fun checkUser(email: String, password: String): Int {
             val query = "SELECT * FROM user WHERE email='" + email + "' AND password='" + password + "'"
@@ -50,10 +49,19 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
             }
             return -1
         }
-
-//        fun selectId(id : Int) {
-//            val query = "SELECT * FROM user WHERE id_user=$id"
-//            val rs = db.rawQuery(query,null)
-//            return arrayOf()
-//        }
+        @SuppressLint("Range")
+        fun selectId(id: Int) : Array<String>{
+            val query = "SELECT * FROM user WHERE id_user=$id"
+            val rs = db.rawQuery(query,null)
+            if(rs.moveToFirst()) {
+                val idUser = rs.getInt(rs.getColumnIndex("id_user"))
+                val nama = rs.getString(rs.getColumnIndex("nama"))
+                val email = rs.getString(rs.getColumnIndex("email"))
+                val nomor = rs.getString(rs.getColumnIndex("nomor"))
+                val tgl_lahir = rs.getString(rs.getColumnIndex("tglLahir"))
+                rs.close()
+                return arrayOf(idUser.toString(),nama,email,nomor,tgl_lahir)
+            }
+            return arrayOf("","","","","","")
+        }
     }

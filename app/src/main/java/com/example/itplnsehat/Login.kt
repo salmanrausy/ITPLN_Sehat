@@ -35,10 +35,10 @@ class Login : AppCompatActivity() {
                     intent.putExtras(bundle)
                     startActivity(intent)
                 }
+                Toast.makeText(applicationContext,"Email belum terdaftar",Toast.LENGTH_LONG).show()
             }
             else {
-                val toast = Toast.makeText(applicationContext, "Lengkapi Username dan Password", Toast.LENGTH_LONG)
-                toast.show()
+                Toast.makeText(applicationContext, "Lengkapi Username dan Password", Toast.LENGTH_LONG).show()
             }
         }
     }

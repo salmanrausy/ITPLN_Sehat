@@ -10,9 +10,46 @@
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="142dp"
+        android:layout_marginTop="140dp"
         android:text="@string/app_name"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/EmailBeranda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="63dp"
+        android:text="@string/app_name"
+        app:layout_constraintStart_toStartOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:text="@string/app_name"
+        app:layout_constraintStart_toStartOf="@+id/tglLahir"
+        app:layout_constraintTop_toBottomOf="@+id/tglLahir" />
+
+    <TextView
+        android:id="@+id/nomorTelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="@string/app_name"
+        app:layout_constraintStart_toStartOf="@+id/EmailBeranda"
+        app:layout_constraintTop_toBottomOf="@+id/EmailBeranda" />
+
+    <TextView
+        android:id="@+id/tglLahir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="51dp"
+        android:text="@string/app_name"
+        app:layout_constraintStart_toStartOf="@+id/nomorTelp"
+        app:layout_constraintTop_toBottomOf="@+id/nomorTelp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
