@@ -34,8 +34,9 @@ class Login : AppCompatActivity() {
                     bundle.putString("iduser", idUser.toString())
                     intent.putExtras(bundle)
                     startActivity(intent)
-                }
+                }else{
                 Toast.makeText(applicationContext,"Email belum terdaftar",Toast.LENGTH_LONG).show()
+                }
             }
             else {
                 Toast.makeText(applicationContext, "Lengkapi Username dan Password", Toast.LENGTH_LONG).show()

@@ -260,7 +260,6 @@
     </androidx.cardview.widget.CardView>
 
 
-
     <TextView
         android:id="@+id/HakCipta"
         android:layout_width="wrap_content"
