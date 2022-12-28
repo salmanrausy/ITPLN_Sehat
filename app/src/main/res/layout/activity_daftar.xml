@@ -173,6 +173,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
+                    android:inputType="phone"
                     android:background="@drawable/bgedittext"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:hint="@string/nomor_telp"
