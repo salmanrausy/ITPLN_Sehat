@@ -13,13 +13,30 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
     {
         private  val db = this.writableDatabase
         override fun onCreate(db: SQLiteDatabase?) {
-            val createTable = "CREATE TABLE user ( id_user INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    " nama VARCHAR(50), " +
-                    " email VARCHAR(50), " +
-                    " nomor VARCHAR(15), " +
-                    " tglLahir date, " +
-                    " password VARCHAR(50));"
-            db?.execSQL(createTable)
+            val createTableUser = "CREATE TABLE user ( "+
+                        " id_user INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        " nama VARCHAR(50), " +
+                        " email VARCHAR(50), " +
+                        " nomor VARCHAR(15), " +
+                        " tglLahir DATE, " +
+                        " password VARCHAR(50)); "
+            val createTableDokter =  " CREATE TABLE dokter ( "+
+                        " id_dokter INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                        " nama VARCHAR(50), " +
+                        " spesialis VARCHAR(50)); "
+            val createTableJadwal   = " CREATE TABLE jadwal ( "+
+                        " id_jadwal INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                        " id_user INTEGER, " +
+                        " id_dokter INTEGER, "+
+                        " kunjungan DATETIME, " +
+                        " keterangan VARCHAR(100)," +
+                        " FOREIGN KEY(id_user) references user(id_user)," +
+                        " FOREIGN KEY(id_dokter) references dokter(id_dokter)); "
+            val insertdata = "INSERT INTO dokter VALUES ('','Dr. Adi','Gigi'); "
+            db?.execSQL(createTableUser)
+            db?.execSQL(createTableDokter)
+            db?.execSQL(createTableJadwal)
+            db?.execSQL(insertdata)
         }
         override fun onUpgrade(db: SQLiteDatabase?,oldVersion: Int,newVersion:
         Int) {
@@ -35,7 +52,7 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
             if (result == -1.toLong())
                 Toast.makeText(context, "FAILED", Toast.LENGTH_SHORT).show()
             else
-                Toast.makeText(context, "SUCCESS", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "ADD ACCOUNT SUCCESS", Toast.LENGTH_SHORT).show()
         }
 
         @SuppressLint("Range")
