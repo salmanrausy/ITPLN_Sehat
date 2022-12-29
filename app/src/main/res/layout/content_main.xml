@@ -6,8 +6,4 @@
     tools:showIn="@layout/fragment_home_"
     tools:context=".Beranda">
 
-    <com.synnapps.carouselview.CarouselView
-
-        tools:ignore="MissingClass" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

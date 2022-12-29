@@ -5,9 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.itplnsehat.databinding.ActivityMainBinding
 
 
 class Home_Fragment : Fragment() {
+
+    private lateinit var binding : ActivityMainBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
