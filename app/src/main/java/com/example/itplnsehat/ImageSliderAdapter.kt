@@ -1,30 +1,41 @@
 package com.example.itplnsehat
 
+import android.app.Activity
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.example.itplnsehat.databinding.ItemSlideBinding
+import android.widget.ImageView
+import androidx.viewpager.widget.PagerAdapter
 
-class ImageSliderAdapter(private val items: List<ImageData>) : RecyclerView.Adapter<ImageSliderAdapter.ImageViewHolder>() {
-    inner class ImageViewHolder(itemView: ItemSlideBinding) : RecyclerView.ViewHolder(itemView.root){
-        private val binding = itemView
-        fun bind(data: ImageData){
-            with(binding){
-                Glide.with(itemView)
-                    .load(data.imageUrl)
-                    .into(ivSlider)
-            }
-        }
+class ImageSliderAdapter(var dataSlider : ArrayList<Int>, var context : Activity?) : PagerAdapter(){
+
+    lateinit var layoutInflater : LayoutInflater
+
+    override fun getCount(): Int {
+        return dataSlider.size
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
-        return ImageViewHolder(ItemSlideBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+    override fun isViewFromObject(view: View, `object`: Any): Boolean {
+        return view == `object`
     }
 
-    override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        holder.bind(items[position])
+    override fun instantiateItem(container: ViewGroup, position: Int): Any {
+
+        val layoutInflater = LayoutInflater.from(context)
+        val view = layoutInflater.inflate(R.layout.item_slide, container,false)
+
+        val imgViewSlider : ImageView
+        imgViewSlider = view.findViewById(R.id.iv_slider)
+
+        imgViewSlider.setImageResource(dataSlider[position])
+        container.addView(view, 0)
+
+        return view
     }
 
-    override fun getItemCount(): Int = items.size
+    override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
+        super.destroyItem(container, position, `object`)
+
+        container.removeView(`object` as View)
+    }
 }
