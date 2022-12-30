@@ -4,6 +4,7 @@
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
+    <color name="mirip_teal">#38a3a5</color>
     <color name="teal_700">#FF018786</color>
     <color name="date_picker">#90e0ef</color>
     <color name="black">#FF000000</color>
@@ -13,4 +14,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="fontWhite">#f8f9fa</color>
     <color name="yellow">#ffc300</color>
+    <color name="grey">#495057</color>
 </resources>

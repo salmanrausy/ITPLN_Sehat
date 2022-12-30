@@ -23,6 +23,9 @@
     <string name="nomorBeranda">Nomor :</string>
     <string name="spasi" />
     <string name="tgl_lahir">Tgl Lahir :</string>
+    <string name="EditProfile"><u>Edit Profile</u></string>
+    <string name="CekJadwal">Cek Jadwal Anda</string>
+    <string name="SignOut">SIGN OUT</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

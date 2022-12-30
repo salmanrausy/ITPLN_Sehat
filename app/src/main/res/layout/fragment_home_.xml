@@ -54,6 +54,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Dr. Banner"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/didact_gothic"
+                        android:textColor="@color/black"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
 
@@ -83,6 +86,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Dr. Banner"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/didact_gothic"
+                        android:textColor="@color/black"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
 
@@ -112,6 +118,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Dr. Banner"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/didact_gothic"
+                        android:textColor="@color/black"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
 
@@ -141,6 +150,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Dr. Banner"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/didact_gothic"
+                        android:textColor="@color/black"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
 
@@ -170,6 +182,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Dr. Banner"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/didact_gothic"
+                        android:textColor="@color/black"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
 
@@ -199,6 +214,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Dr. Banner"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/didact_gothic"
+                        android:textColor="@color/black"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
 
