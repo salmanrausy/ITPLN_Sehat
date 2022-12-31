@@ -32,7 +32,7 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
                         " keterangan VARCHAR(100)," +
                         " FOREIGN KEY(id_user) references user(id_user)," +
                         " FOREIGN KEY(id_dokter) references dokter(id_dokter)); "
-            val insertdata = "INSERT INTO dokter VALUES ('','Dr. Adi','Gigi'); "
+            val insertdata = "INSERT INTO dokter (nama,spesialis)VALUES ('Dr. Adi','Gigi'); "
             db?.execSQL(createTableUser)
             db?.execSQL(createTableDokter)
             db?.execSQL(createTableJadwal)
