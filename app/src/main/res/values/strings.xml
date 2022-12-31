@@ -31,4 +31,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="example">(example)</string>
+    <string name="spjantung">Spesialis Kardiologi</string>
+    <string name="spParu">Spesialis Pulmonologi</string>
+    <string name="spAnak">Spesialis Pediatris</string>
+    <string name="spTulang">Spesialis Ortopedi</string>
+    <string name="spOtak">Spesialis Neurologi</string>
 </resources>

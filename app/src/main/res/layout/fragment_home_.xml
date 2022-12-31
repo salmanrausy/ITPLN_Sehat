@@ -326,7 +326,262 @@
                     android:textColor="@color/blue"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:layout_marginTop="15dp"/>
+                    android:layout_marginTop="30dp"/>
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_Jantung"
+                            android:layout_width="300dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            app:cardCornerRadius="12dp"
+                            android:elevation="90dp"
+                            android:backgroundTint="@color/bgMain2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/jantung"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="10dp"/>
+
+                                <TextView
+                                    android:id="@+id/Txt_Jantung"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/didact_gothic"
+                                    android:gravity="center"
+                                    android:text="@string/spjantung"
+                                    android:textColor="@color/fontWhite"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:clickable="true" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_Paru"
+                            android:layout_width="300dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="7dp"
+                            app:cardCornerRadius="12dp"
+                            android:elevation="90dp"
+                            android:backgroundTint="@color/bgMain2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/paru"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="10dp"/>
+
+                                <TextView
+                                    android:id="@+id/Txt_Paru"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/didact_gothic"
+                                    android:gravity="center"
+                                    android:text="@string/spParu"
+                                    android:textColor="@color/fontWhite"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:clickable="true" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_anak"
+                            android:layout_width="300dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="7dp"
+                            app:cardCornerRadius="12dp"
+                            android:elevation="90dp"
+                            android:backgroundTint="@color/bgMain2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/anak"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="10dp"/>
+
+                                <TextView
+                                    android:id="@+id/Txt_anak"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/didact_gothic"
+                                    android:gravity="center"
+                                    android:text="@string/spAnak"
+                                    android:textColor="@color/fontWhite"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:clickable="true" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_tulang"
+                            android:layout_width="300dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="7dp"
+                            app:cardCornerRadius="12dp"
+                            android:elevation="90dp"
+                            android:backgroundTint="@color/bgMain2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/tulang"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="10dp"/>
+
+                                <TextView
+                                    android:id="@+id/Txt_tulang"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/didact_gothic"
+                                    android:gravity="center"
+                                    android:text="@string/spTulang"
+                                    android:textColor="@color/fontWhite"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:clickable="true" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_otak"
+                            android:layout_width="300dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="7dp"
+                            app:cardCornerRadius="12dp"
+                            android:elevation="90dp"
+                            android:backgroundTint="@color/bgMain2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/jantung"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="10dp"/>
+
+                                <TextView
+                                    android:id="@+id/Txt_otak"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/didact_gothic"
+                                    android:gravity="center"
+                                    android:text="@string/spOtak"
+                                    android:textColor="@color/fontWhite"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:clickable="true" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card_Mata"
+                            android:layout_width="300dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="7dp"
+                            app:cardCornerRadius="12dp"
+                            android:elevation="90dp"
+                            android:backgroundTint="@color/bgMain2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/jantung"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="10dp"/>
+
+                                <TextView
+                                    android:id="@+id/Txt_Mata"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/didact_gothic"
+                                    android:gravity="center"
+                                    android:text="Spesialis Ophtalmologis"
+                                    android:textColor="@color/fontWhite"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:clickable="true" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </ScrollView>
 
             </LinearLayout>
 
