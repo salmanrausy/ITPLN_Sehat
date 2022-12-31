@@ -4,5 +4,6 @@
         <item>@font/</item>
         <item>@font/cantarell</item>
         <item>@font/didact_gothic</item>
+        <item>@font/noto_sans</item>
     </array>
 </resources>

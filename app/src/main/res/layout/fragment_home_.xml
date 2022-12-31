@@ -262,12 +262,13 @@
             android:gravity="center"
             android:text="@string/BuatJanji"
             android:textColor="@color/blue"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:clickable="true"
             android:drawableRight="@drawable/ic_baseline_arrow_circle_right_24"/>
 
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/card_Alamat"
             android:layout_width="300dp"
@@ -280,7 +281,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/card_BuatJanji">
 
-
         <TextView
             android:id="@+id/Txt_Alamat"
             android:layout_width="260dp"
@@ -290,10 +290,45 @@
             android:gravity="center"
             android:text="@string/Alamat"
             android:textColor="@color/blue"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:clickable="true"
             android:drawableRight="@drawable/ic_hospital"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_DocSpesialis"
+            android:layout_width="350dp"
+            android:layout_height="370dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="12dp"
+            android:elevation="90dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_Alamat">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Txt_DocSpesialis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:clickable="false"
+                    android:fontFamily="@font/noto_sans"
+                    android:gravity="center"
+                    android:text="Spesialis"
+                    android:textColor="@color/blue"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="15dp"/>
+
+            </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
