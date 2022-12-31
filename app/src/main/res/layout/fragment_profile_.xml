@@ -61,21 +61,44 @@
                     android:textAlignment="center"
                     android:drawableRight="@drawable/ic_check"/>
 
-                <TextView
-                    android:id="@+id/text_NamaUser"
-                    android:layout_width="280dp"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nama                 : "
-                    android:textSize="14sp"
-                    android:textColor="@color/grey"
-                    android:fontFamily="sans-serif"
-                    android:textAlignment="textStart"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="20dp"/>
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:id="@+id/static_NamaUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nama                 : "
+                        android:textSize="14sp"
+                        android:textColor="@color/grey"
+                        android:fontFamily="sans-serif"
+                        android:textAlignment="textStart"
+                        android:layout_marginLeft="30dp"/>
+
+                    <TextView
+                        android:id="@+id/text_NamaUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/example"
+                        android:textSize="14sp"
+                        android:textColor="@color/grey"
+                        android:fontFamily="sans-serif"
+                        android:textAlignment="textStart"
+                        android:layout_marginLeft="5dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/text_BornUser"
-                    android:layout_width="280dp"
+                    android:id="@+id/static_BornUser"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tanggal Lahir   : "
                     android:textSize="14sp"
@@ -85,56 +108,109 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="8dp"/>
 
-                <TextView
-                    android:id="@+id/text_PhoneUser"
-                    android:layout_width="280dp"
-                    android:layout_height="wrap_content"
-                    android:text="Nomor Telpon  : "
-                    android:textSize="14sp"
-                    android:textColor="@color/grey"
-                    android:fontFamily="sans-serif"
-                    android:textAlignment="textStart"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="8dp"/>
+                    <TextView
+                        android:id="@+id/text_BornUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/example"
+                        android:textSize="14sp"
+                        android:textColor="@color/grey"
+                        android:fontFamily="sans-serif"
+                        android:textAlignment="textStart"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="8dp"/>
 
-                <TextView
-                    android:id="@+id/text_EditProfile"
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/EditProfile"
-                    android:textSize="12sp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/grey"
-                    android:fontFamily="sans-serif"
-                    android:layout_marginTop="15dp"
-                    android:paddingHorizontal="20dp"
-                    android:paddingVertical="5dp"
-                    android:clickable="true"/>
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/static_PhoneUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nomor Telpon  : "
+                        android:textSize="14sp"
+                        android:textColor="@color/grey"
+                        android:fontFamily="sans-serif"
+                        android:textAlignment="textStart"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="8dp"/>
+
+                    <TextView
+                        android:id="@+id/text_PhoneUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/example"
+                        android:textSize="14sp"
+                        android:textColor="@color/grey"
+                        android:fontFamily="sans-serif"
+                        android:textAlignment="textStart"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="8dp"/>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Static_Password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Password          : "
+                        android:textSize="14sp"
+                        android:textColor="@color/grey"
+                        android:fontFamily="sans-serif"
+                        android:textAlignment="textStart"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="8dp"/>
+
+                    <TextView
+                        android:id="@+id/text_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/example"
+                        android:textSize="14sp"
+                        android:textColor="@color/grey"
+                        android:fontFamily="sans-serif"
+                        android:textAlignment="textStart"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="8dp"/>
+
+                </LinearLayout>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/cardCekJadwal"
+                    android:id="@+id/cardEditProfile"
                     android:layout_width="280dp"
                     android:layout_height="35dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="70dp"
                     android:clickable="true"
                     app:cardCornerRadius="30dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/cardPassword_daftar">
 
-                    <Button
-                        android:backgroundTint="@color/bgMain2"
-                        android:id="@+id/btn_CekJadwal"
-                        android:layout_width="300dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/didact_gothic"
-                        android:gravity="center"
-                        android:text="@string/CekJadwal"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                <Button
+                    android:backgroundTint="@color/bgMain2"
+                    android:id="@+id/btn_EditProfile"
+                    android:layout_width="320dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/didact_gothic"
+                    android:gravity="center"
+                    android:text="@string/EditProfile"
+                    android:textColor="@color/bgMain"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -142,7 +218,7 @@
                     android:layout_width="280dp"
                     android:layout_height="35dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="7dp"
                     android:clickable="true"
                     app:cardCornerRadius="30dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -152,8 +228,8 @@
                     <Button
                         android:backgroundTint="@color/grey"
                         android:id="@+id/btn_LogOut"
-                        android:layout_width="300dp"
-                        android:layout_height="50dp"
+                        android:layout_width="320dp"
+                        android:layout_height="60dp"
                         android:layout_gravity="center"
                         android:fontFamily="@font/didact_gothic"
                         android:gravity="center"
@@ -173,7 +249,7 @@
                     android:text="@string/design_by"
                     android:textColor="@color/black"
                     android:textSize="14sp"
-                    android:layout_marginTop="50dp"/>
+                    android:layout_marginTop="25dp"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
