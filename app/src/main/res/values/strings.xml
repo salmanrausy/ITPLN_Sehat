@@ -26,6 +26,8 @@
     <string name="EditProfile"><u>Edit Profile</u></string>
     <string name="CekJadwal">Cek Jadwal Anda</string>
     <string name="SignOut">SIGN OUT</string>
+    <string name="BuatJanji">Buat Janji Dengan Dokter</string>
+    <string name="Alamat">Cek Lokasi Rumah Sakit</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

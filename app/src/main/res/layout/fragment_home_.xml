@@ -10,218 +10,292 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/bgDaftar">
+        android:background="@drawable/pln">
 
-        <HorizontalScrollView
-            android:id="@+id/HS_Banner"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_Banner"
             android:layout_width="match_parent"
             android:layout_height="180dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="15dp"
+            android:backgroundTint="@color/teal_700"
+            android:elevation="50dp">
 
-            <LinearLayout
+            <HorizontalScrollView
+                android:id="@+id/HS_Banner"
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent">
 
                 <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="180dp"
-                    android:orientation="vertical"
-                    android:layout_marginRight="10dp"
-                    android:gravity="center">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-                    <androidx.cardview.widget.CardView
+                    <LinearLayout
                         android:layout_width="180dp"
-                        android:layout_height="140dp"
-                        android:layout_gravity="center"
-                        app:cardCornerRadius="20dp">
+                        android:layout_height="180dp"
+                        android:orientation="vertical"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center">
 
-                        <ImageView
-                            android:id="@+id/Doc1"
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="180dp"
+                            android:layout_height="140dp"
                             android:layout_gravity="center"
-                            android:layout_width="200dp"
-                            android:layout_height="150dp"
-                            android:src="@drawable/dokter_1"/>
+                            app:cardCornerRadius="20dp">
 
-                    </androidx.cardview.widget.CardView>
+                            <ImageView
+                                android:id="@+id/Doc1"
+                                android:layout_gravity="center"
+                                android:layout_width="200dp"
+                                android:layout_height="150dp"
+                                android:src="@drawable/dokter_1"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Dr. Banner"
-                        android:textSize="14sp"
-                        android:fontFamily="@font/didact_gothic"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="5dp"/>
-                </LinearLayout>
+                        </androidx.cardview.widget.CardView>
 
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="180dp"
-                    android:orientation="vertical"
-                    android:layout_marginRight="10dp"
-                    android:gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr. Banner"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/didact_gothic"
+                            android:textColor="@color/bgDaftar"
+                            android:textStyle="bold"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
 
-                    <androidx.cardview.widget.CardView
+                    <LinearLayout
                         android:layout_width="180dp"
-                        android:layout_height="140dp"
-                        android:layout_gravity="center"
-                        app:cardCornerRadius="20dp">
+                        android:layout_height="180dp"
+                        android:orientation="vertical"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center">
 
-                        <ImageView
-                            android:id="@+id/Doc2"
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="180dp"
+                            android:layout_height="140dp"
                             android:layout_gravity="center"
-                            android:layout_width="200dp"
-                            android:layout_height="150dp"
-                            android:src="@drawable/dokter_2"/>
+                            app:cardCornerRadius="20dp">
 
-                    </androidx.cardview.widget.CardView>
+                            <ImageView
+                                android:id="@+id/Doc2"
+                                android:layout_gravity="center"
+                                android:layout_width="200dp"
+                                android:layout_height="150dp"
+                                android:src="@drawable/dokter_2"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Dr. Banner"
-                        android:textSize="14sp"
-                        android:fontFamily="@font/didact_gothic"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="5dp"/>
-                </LinearLayout>
+                        </androidx.cardview.widget.CardView>
 
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="180dp"
-                    android:orientation="vertical"
-                    android:layout_marginRight="10dp"
-                    android:gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr. Kamaludin"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/didact_gothic"
+                            android:textColor="@color/bgDaftar"
+                            android:textStyle="bold"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
 
-                    <androidx.cardview.widget.CardView
+                    <LinearLayout
                         android:layout_width="180dp"
-                        android:layout_height="140dp"
-                        android:layout_gravity="center"
-                        app:cardCornerRadius="20dp">
+                        android:layout_height="180dp"
+                        android:orientation="vertical"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center">
 
-                        <ImageView
-                            android:id="@+id/Doc3"
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="180dp"
+                            android:layout_height="140dp"
                             android:layout_gravity="center"
-                            android:layout_width="200dp"
-                            android:layout_height="150dp"
-                            android:src="@drawable/dokter_3"/>
+                            app:cardCornerRadius="20dp">
 
-                    </androidx.cardview.widget.CardView>
+                            <ImageView
+                                android:id="@+id/Doc3"
+                                android:layout_gravity="center"
+                                android:layout_width="200dp"
+                                android:layout_height="150dp"
+                                android:src="@drawable/dokter_3"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Dr. Banner"
-                        android:textSize="14sp"
-                        android:fontFamily="@font/didact_gothic"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="5dp"/>
-                </LinearLayout>
+                        </androidx.cardview.widget.CardView>
 
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="180dp"
-                    android:orientation="vertical"
-                    android:layout_marginRight="10dp"
-                    android:gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr. Kehfa"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/didact_gothic"
+                            android:textColor="@color/bgDaftar"
+                            android:textStyle="bold"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
 
-                    <androidx.cardview.widget.CardView
+                    <LinearLayout
                         android:layout_width="180dp"
-                        android:layout_height="140dp"
-                        android:layout_gravity="center"
-                        app:cardCornerRadius="20dp">
+                        android:layout_height="180dp"
+                        android:orientation="vertical"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center">
 
-                        <ImageView
-                            android:id="@+id/Doc4"
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="180dp"
+                            android:layout_height="140dp"
                             android:layout_gravity="center"
-                            android:layout_width="200dp"
-                            android:layout_height="150dp"
-                            android:src="@drawable/dokter_4"/>
+                            app:cardCornerRadius="20dp">
 
-                    </androidx.cardview.widget.CardView>
+                            <ImageView
+                                android:id="@+id/Doc4"
+                                android:layout_gravity="center"
+                                android:layout_width="200dp"
+                                android:layout_height="150dp"
+                                android:src="@drawable/dokter_4"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Dr. Banner"
-                        android:textSize="14sp"
-                        android:fontFamily="@font/didact_gothic"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="5dp"/>
-                </LinearLayout>
+                        </androidx.cardview.widget.CardView>
 
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="180dp"
-                    android:orientation="vertical"
-                    android:layout_marginRight="10dp"
-                    android:gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr. Lucille"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/didact_gothic"
+                            android:textColor="@color/bgDaftar"
+                            android:textStyle="bold"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
 
-                    <androidx.cardview.widget.CardView
+                    <LinearLayout
                         android:layout_width="180dp"
-                        android:layout_height="140dp"
-                        android:layout_gravity="center"
-                        app:cardCornerRadius="20dp">
+                        android:layout_height="180dp"
+                        android:orientation="vertical"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center">
 
-                        <ImageView
-                            android:id="@+id/Doc5"
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="180dp"
+                            android:layout_height="140dp"
                             android:layout_gravity="center"
-                            android:layout_width="200dp"
-                            android:layout_height="150dp"
-                            android:src="@drawable/dokter_5"/>
+                            app:cardCornerRadius="20dp">
 
-                    </androidx.cardview.widget.CardView>
+                            <ImageView
+                                android:id="@+id/Doc5"
+                                android:layout_gravity="center"
+                                android:layout_width="200dp"
+                                android:layout_height="150dp"
+                                android:src="@drawable/dokter_5"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Dr. Banner"
-                        android:textSize="14sp"
-                        android:fontFamily="@font/didact_gothic"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="5dp"/>
-                </LinearLayout>
+                        </androidx.cardview.widget.CardView>
 
-                <LinearLayout
-                    android:layout_width="180dp"
-                    android:layout_height="180dp"
-                    android:orientation="vertical"
-                    android:layout_marginRight="10dp"
-                    android:gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr. Meisya"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/didact_gothic"
+                            android:textColor="@color/bgDaftar"
+                            android:textStyle="bold"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
 
-                    <androidx.cardview.widget.CardView
+                    <LinearLayout
                         android:layout_width="180dp"
-                        android:layout_height="140dp"
-                        android:layout_gravity="center"
-                        app:cardCornerRadius="20dp">
+                        android:layout_height="180dp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_marginRight="10dp">
 
-                        <ImageView
-                            android:id="@+id/Doc6"
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="180dp"
+                            android:layout_height="140dp"
                             android:layout_gravity="center"
-                            android:layout_width="200dp"
-                            android:layout_height="150dp"
-                            android:src="@drawable/dokter_6"/>
+                            app:cardCornerRadius="20dp">
 
-                    </androidx.cardview.widget.CardView>
+                            <ImageView
+                                android:id="@+id/Doc6"
+                                android:layout_gravity="center"
+                                android:layout_width="200dp"
+                                android:layout_height="150dp"
+                                android:src="@drawable/dokter_6"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Dr. Banner"
-                        android:textSize="14sp"
-                        android:fontFamily="@font/didact_gothic"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="5dp"/>
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr. Strange"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/didact_gothic"
+                            android:textColor="@color/bgDaftar"
+                            android:textStyle="bold"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
+
                 </LinearLayout>
+            </HorizontalScrollView>
 
-            </LinearLayout>
-        </HorizontalScrollView>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_BuatJanji"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="12dp"
+            android:elevation="90dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_Banner">
+
+
+        <TextView
+            android:id="@+id/Txt_BuatJanji"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:fontFamily="@font/didact_gothic"
+            android:gravity="center"
+            android:text="@string/BuatJanji"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:drawableRight="@drawable/ic_baseline_arrow_circle_right_24"/>
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_Alamat"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="7dp"
+            app:cardCornerRadius="12dp"
+            android:elevation="90dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_BuatJanji">
+
+
+        <TextView
+            android:id="@+id/Txt_Alamat"
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:fontFamily="@font/didact_gothic"
+            android:gravity="center"
+            android:text="@string/Alamat"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:drawableRight="@drawable/ic_hospital"/>
+
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
