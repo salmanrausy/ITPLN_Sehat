@@ -25,30 +25,30 @@ class Profile_Fragment : Fragment() {
     fun initialized (v : View){
         val db = DataHelper(v.context)
 
-        val edtNama = view?.findViewById<TextView>(R.id.text_NamaUser)
-        val edtemail = view?.findViewById<TextView>(R.id.text_EmailUser)
-        val edtLahir = view?.findViewById<TextView>(R.id.text_BornUser)
-        val edtPhone = view?.findViewById<TextView>(R.id.text_PhoneUser)
+        val tvNama = view?.findViewById<TextView>(R.id.text_NamaUser)
+        val tvemail = view?.findViewById<TextView>(R.id.text_EmailUser)
+        val tvLahir = view?.findViewById<TextView>(R.id.text_BornUser)
+        val tvPhone = view?.findViewById<TextView>(R.id.text_PhoneUser)
 
 
         val idUser = activity?.intent!!.getStringExtra("iduser").toString()
-        val profile = db.profile(idUser.toString().toInt())
+        val profile = db.profile(idUser.toInt())
 
         val parser = SimpleDateFormat("yyyy-MM-dd", Locale.US)
         val formatter = SimpleDateFormat("dd-MM-yyyy", Locale.US)
         val date = formatter.format(parser.parse(profile[3]))
 
-        if (edtNama != null) {
-            edtNama.text = profile[0]
+        if (tvNama != null) {
+            tvNama.text = profile[0]
         }
-        if (edtemail != null) {
-            edtemail.text = profile[1]
+        if (tvemail != null) {
+            tvemail.text = profile[1]
         }
-        if (edtPhone != null) {
-            edtPhone.text = profile[2]
+        if (tvPhone != null) {
+            tvPhone.text = profile[2]
         }
-        if (edtLahir != null) {
-            edtLahir.text = date
+        if (tvLahir != null) {
+            tvLahir.text = date
         }
     }
 }
