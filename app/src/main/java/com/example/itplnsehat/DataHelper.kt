@@ -33,10 +33,12 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
                         " FOREIGN KEY(id_user) references user(id_user)," +
                         " FOREIGN KEY(id_dokter) references dokter(id_dokter)); "
             val insertdata = "INSERT INTO dokter (nama,spesialis)VALUES ('Dr. Adi','Gigi'); "
+            val insertdatauser = "INSERT INTO user (nama,email,nomor,tglLahir,password)VALUES ('Admin','admin','0834637322' ,'2001-12-09','admin'); "
             db?.execSQL(createTableUser)
             db?.execSQL(createTableDokter)
             db?.execSQL(createTableJadwal)
             db?.execSQL(insertdata)
+            db?.execSQL(insertdatauser)
         }
         override fun onUpgrade(db: SQLiteDatabase?,oldVersion: Int,newVersion:
         Int) {

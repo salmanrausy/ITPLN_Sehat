@@ -52,7 +52,7 @@
             android:id="@+id/cardFullName"
             android:layout_width="315dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
+            android:layout_gravity="start"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="20dp"
             app:cardBackgroundColor="@color/cardview_shadow_end_color"
