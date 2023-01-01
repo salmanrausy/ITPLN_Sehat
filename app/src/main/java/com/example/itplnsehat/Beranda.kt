@@ -1,12 +1,16 @@
 package com.example.itplnsehat
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import kotlinx.android.synthetic.main.activity_beranda.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class Beranda : AppCompatActivity() {
     val fragHome : Fragment = Home_Fragment()
@@ -17,6 +21,7 @@ class Beranda : AppCompatActivity() {
     private lateinit var menu : Menu
     private lateinit var menuItem : MenuItem
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_beranda)

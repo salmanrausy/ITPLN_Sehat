@@ -69,18 +69,17 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
             return -1
         }
         @SuppressLint("Range")
-        fun selectId(id: Int) : Array<String>{
-            val query = "SELECT * FROM user WHERE id_user=$id"
+        fun profile(id: Int) : Array<String>{
+            val query = "SELECT nama,email,nomor,tglLahir FROM user WHERE id_user=$id"
             val rs = db.rawQuery(query,null)
             if(rs.moveToFirst()) {
-                val idUser = rs.getInt(rs.getColumnIndex("id_user"))
                 val nama = rs.getString(rs.getColumnIndex("nama"))
                 val email = rs.getString(rs.getColumnIndex("email"))
                 val nomor = rs.getString(rs.getColumnIndex("nomor"))
                 val tgl_lahir = rs.getString(rs.getColumnIndex("tglLahir"))
                 rs.close()
-                return arrayOf(idUser.toString(),nama,email,nomor,tgl_lahir)
+                return arrayOf(nama,email,nomor,tgl_lahir)
             }
-            return arrayOf("","","","","","")
+            return arrayOf("","","","","")
         }
     }
