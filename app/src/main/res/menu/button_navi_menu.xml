@@ -10,4 +10,9 @@
         android:title="Profile"
         android:id="@+id/navi_profile"
         android:icon="@drawable/info"/>
+
+    <item
+        android:title="Jadwal"
+        android:id="@+id/navi_jadwal"
+        android:icon="@drawable/ic_jadwal"/>
 </menu>

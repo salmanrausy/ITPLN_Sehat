@@ -12,9 +12,11 @@
     <color name="black">#FF000000</color>
     <color name="bgMain">#212529</color>
     <color name="bgMain2">#f28482</color>
+    <color name="red">#bc4749</color>
     <color name="bgDaftar">#edede9</color>
     <color name="white">#FFFFFFFF</color>
     <color name="fontWhite">#f8f9fa</color>
     <color name="yellow">#ffc300</color>
     <color name="grey">#495057</color>
+    <color name="green">#a7c957</color>
 </resources>

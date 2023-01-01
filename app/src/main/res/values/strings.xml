@@ -36,4 +36,7 @@
     <string name="spAnak">Spesialis Pediatris</string>
     <string name="spTulang">Spesialis Ortopedi</string>
     <string name="spOtak">Spesialis Neurologi</string>
+    <string name="our_website">Our Website</string>
+    <string name="save">save</string>
+    <string name="clear">clear</string>
 </resources>

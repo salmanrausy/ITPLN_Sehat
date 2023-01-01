@@ -68,14 +68,24 @@
 
                     <TextView
                         android:id="@+id/static_NamaUser"
-                        android:layout_width="wrap_content"
+                        android:layout_width="95dp"
                         android:layout_height="wrap_content"
-                        android:text="Nama                 : "
+                        android:text="Nama"
                         android:textSize="14sp"
                         android:textColor="@color/grey"
                         android:fontFamily="sans-serif"
                         android:textAlignment="textStart"
                         android:layout_marginLeft="30dp"/>
+
+                    <TextView
+                        android:id="@+id/text_view1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textSize="14sp"
+                        android:textColor="@color/grey"
+                        android:fontFamily="sans-serif"
+                        android:textAlignment="textStart" />
 
                     <TextView
                         android:id="@+id/text_NamaUser"
@@ -97,15 +107,26 @@
 
                 <TextView
                     android:id="@+id/static_BornUser"
-                    android:layout_width="wrap_content"
+                    android:layout_width="95dp"
                     android:layout_height="wrap_content"
-                    android:text="Tanggal Lahir   : "
+                    android:text="Tanggal Lahir"
                     android:textSize="14sp"
                     android:textColor="@color/grey"
                     android:fontFamily="sans-serif"
                     android:textAlignment="textStart"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="8dp"/>
+
+                    <TextView
+                        android:id="@+id/text_view2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textSize="14sp"
+                        android:textColor="@color/grey"
+                        android:fontFamily="sans-serif"
+                        android:textAlignment="textStart"
+                        android:layout_marginTop="8dp"/>
 
                     <TextView
                         android:id="@+id/text_BornUser"
@@ -128,14 +149,25 @@
 
                     <TextView
                         android:id="@+id/static_PhoneUser"
-                        android:layout_width="wrap_content"
+                        android:layout_width="95dp"
                         android:layout_height="wrap_content"
-                        android:text="Nomor Telpon  : "
+                        android:text="Nomor Telpon"
                         android:textSize="14sp"
                         android:textColor="@color/grey"
                         android:fontFamily="sans-serif"
                         android:textAlignment="textStart"
                         android:layout_marginLeft="30dp"
+                        android:layout_marginTop="8dp"/>
+
+                    <TextView
+                        android:id="@+id/text_view3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textSize="14sp"
+                        android:textColor="@color/grey"
+                        android:fontFamily="sans-serif"
+                        android:textAlignment="textStart"
                         android:layout_marginTop="8dp"/>
 
                     <TextView
@@ -152,8 +184,6 @@
 
                 </LinearLayout>
 
-
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -161,14 +191,25 @@
 
                     <TextView
                         android:id="@+id/Static_Password"
-                        android:layout_width="wrap_content"
+                        android:layout_width="95dp"
                         android:layout_height="wrap_content"
-                        android:text="Password          : "
+                        android:text="Password"
                         android:textSize="14sp"
                         android:textColor="@color/grey"
                         android:fontFamily="sans-serif"
                         android:textAlignment="textStart"
                         android:layout_marginLeft="30dp"
+                        android:layout_marginTop="8dp"/>
+
+                    <TextView
+                        android:id="@+id/text_view4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textSize="14sp"
+                        android:textColor="@color/grey"
+                        android:fontFamily="sans-serif"
+                        android:textAlignment="textStart"
                         android:layout_marginTop="8dp"/>
 
                     <TextView
@@ -188,9 +229,9 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardEditProfile"
                     android:layout_width="280dp"
-                    android:layout_height="35dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="70dp"
+                    android:layout_marginTop="35dp"
                     android:clickable="true"
                     app:cardCornerRadius="30dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -206,7 +247,34 @@
                     android:fontFamily="@font/didact_gothic"
                     android:gravity="center"
                     android:text="@string/EditProfile"
-                    android:textColor="@color/bgMain"
+                    android:textColor="@color/fontWhite"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardWebsite"
+                    android:layout_width="280dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="7dp"
+                    android:clickable="true"
+                    app:cardCornerRadius="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cardPassword_daftar">
+
+                <Button
+                    android:backgroundTint="@color/mirip_teal"
+                    android:id="@+id/btn_Website"
+                    android:layout_width="320dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/didact_gothic"
+                    android:gravity="center"
+                    android:text="@string/our_website"
+                    android:textColor="@color/white"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -222,7 +290,7 @@
                     app:cardCornerRadius="30dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cardPassword_daftar">
+                    app:layout_constraintTop_toBottomOf="@id/cardWebsite">
 
                     <Button
                         android:backgroundTint="@color/grey"
