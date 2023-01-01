@@ -1,4 +1,4 @@
-package com.example.itplnsehat
+package com.example.itplnsehat.model
 
 
 import android.annotation.SuppressLint

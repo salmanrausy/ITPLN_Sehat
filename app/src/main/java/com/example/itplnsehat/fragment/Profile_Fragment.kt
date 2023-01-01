@@ -1,4 +1,4 @@
-package com.example.itplnsehat
+package com.example.itplnsehat.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.example.itplnsehat.R
+import com.example.itplnsehat.model.DataHelper
 import java.text.SimpleDateFormat
 import java.util.*
 

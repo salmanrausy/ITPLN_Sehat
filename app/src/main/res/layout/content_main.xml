@@ -4,6 +4,6 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="@layout/fragment_home_"
-    tools:context=".Beranda">
+    tools:context=".view.Beranda">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

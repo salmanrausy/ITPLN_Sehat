@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
+import com.example.itplnsehat.view.Login
 
 class MainActivity : AppCompatActivity() {
     //INI CLASS UNTUK SPLASHSCREEN
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         //Instruksi menjalankan main screen setelah timer splash screen selesai
         Handler().postDelayed({
-            val intent = Intent(this@MainActivity,Login::class.java)
+            val intent = Intent(this@MainActivity, Login::class.java)
             startActivity(intent)
             finish()
         }, SPLASH_TIME_OUT)

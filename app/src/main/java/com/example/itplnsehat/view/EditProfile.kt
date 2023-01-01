@@ -1,7 +1,8 @@
-package com.example.itplnsehat
+package com.example.itplnsehat.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.itplnsehat.R
 
 class EditProfile : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

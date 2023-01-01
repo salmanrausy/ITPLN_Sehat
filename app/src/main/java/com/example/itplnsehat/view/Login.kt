@@ -1,4 +1,4 @@
-package com.example.itplnsehat
+package com.example.itplnsehat.view
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -8,6 +8,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.itplnsehat.R
+import com.example.itplnsehat.model.DataHelper
 
 class Login : AppCompatActivity() {
     @SuppressLint("Range")

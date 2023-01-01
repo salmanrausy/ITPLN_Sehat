@@ -1,15 +1,16 @@
-package com.example.itplnsehat
+package com.example.itplnsehat.view
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.example.itplnsehat.fragment.Home_Fragment
+import com.example.itplnsehat.fragment.Profile_Fragment
+import com.example.itplnsehat.R
 import kotlinx.android.synthetic.main.activity_beranda.*
-import java.text.SimpleDateFormat
 import java.util.*
 
 class Beranda : AppCompatActivity() {

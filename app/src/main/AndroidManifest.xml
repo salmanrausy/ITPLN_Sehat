@@ -14,22 +14,22 @@
         android:theme="@style/Theme.ITPLNSehat"
         tools:targetApi="31">
         <activity
-            android:name=".EditProfile"
+            android:name=".view.EditProfile"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Beranda"
+            android:name=".view.Beranda"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
-            android:name=".Login"
+            android:name=".view.Login"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
-            android:name=".Daftar"
+            android:name=".view.Daftar"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity

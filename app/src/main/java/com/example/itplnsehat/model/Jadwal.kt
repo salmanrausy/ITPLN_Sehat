@@ -1,4 +1,4 @@
-package com.example.itplnsehat
+package com.example.itplnsehat.model
 
 class Jadwal {
     var id_user : Int = 0
