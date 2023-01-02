@@ -10,12 +10,15 @@ import androidx.fragment.app.FragmentManager
 import com.example.itplnsehat.fragment.Home_Fragment
 import com.example.itplnsehat.fragment.Profile_Fragment
 import com.example.itplnsehat.R
+import com.example.itplnsehat.fragment.JadwalFragment
 import kotlinx.android.synthetic.main.activity_beranda.*
 import java.util.*
 
 class Beranda : AppCompatActivity() {
     val fragHome : Fragment = Home_Fragment()
     val fragProfile : Fragment = Profile_Fragment()
+    val fragJadwal : Fragment = JadwalFragment()
+
     val fm : FragmentManager = supportFragmentManager
     var active : Fragment = fragHome
 
@@ -33,6 +36,7 @@ class Beranda : AppCompatActivity() {
     private fun setupNaviBottom() {
         fm.beginTransaction().add(R.id.navi_content, fragHome).show(fragHome).commit()
         fm.beginTransaction().add(R.id.navi_content, fragProfile).show(fragProfile).commit()
+        fm.beginTransaction().add(R.id.navi_content, fragJadwal).show(fragJadwal).commit()
 
         menu = btn_navi_view.menu
         menuItem = menu.getItem(0)
@@ -45,6 +49,9 @@ class Beranda : AppCompatActivity() {
                 }
                 R.id.navi_profile -> {
                     callFrag(1, fragProfile)
+                }
+                R.id.navi_jadwal -> {
+                    callFrag(2, fragJadwal)
                 }
             }
             false

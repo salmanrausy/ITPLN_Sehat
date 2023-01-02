@@ -15,4 +15,5 @@
         android:title="Jadwal"
         android:id="@+id/navi_jadwal"
         android:icon="@drawable/ic_jadwal"/>
+
 </menu>

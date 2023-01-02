@@ -7,6 +7,7 @@
     tools:context=".fragment.Profile_Fragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/pln">
@@ -216,7 +217,7 @@
                         android:id="@+id/text_password"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/example"
+                        android:text="***********"
                         android:textSize="14sp"
                         android:textColor="@color/grey"
                         android:fontFamily="sans-serif"

@@ -16,4 +16,11 @@
         android:name="com.example.itplnsehat.fragment.Profile_Fragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile_"/>
+
+    <fragment
+        android:id="@+id/navi_jadwal"
+        android:name="com.example.itplnsehat.fragment.JadwalFragment"
+        android:label="Jadwal"
+        tools:layout="@layout/fragment_jadwal"/>
+
 </navigation>

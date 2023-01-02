@@ -59,7 +59,6 @@ class Daftar : AppCompatActivity() {
             }
         }
 
-
         val datePicker = DatePickerDialog.OnDateSetListener { view, year, month,
                                                               dayofmonth ->
             myCalendar.set(Calendar.YEAR, year)

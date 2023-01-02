@@ -4,11 +4,15 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.example.itplnsehat.R
+import com.example.itplnsehat.fragment.Home_Fragment
+import com.example.itplnsehat.fragment.Profile_Fragment
 import com.example.itplnsehat.model.DataHelper
 
 class Login : AppCompatActivity() {
@@ -32,7 +36,19 @@ class Login : AppCompatActivity() {
                 val idUser = db.checkUser(Email.text.toString(),Password.text.toString())
                 if (idUser>0){
                     val bundle = Bundle()
-                    intent = Intent(this, Beranda::class.java)
+
+//                    val HomeFragment = Home_Fragment()
+//                    val fragment : Fragment? = supportFragmentManager.findFragmentByTag(
+//                        HomeFragment::class.java.simpleName)
+//
+//                    if (fragment !is Profile_Fragment){
+//                        supportFragmentManager.beginTransaction()
+//                            .add(R.id.container_fragment, HomeFragment, Home_Fragment::class.java.simpleName)
+//                            .commit()
+//                    }
+//                    buttonLogin.visibility = View.GONE
+
+                    intent = Intent(this, Home_Fragment::class.java)
                     bundle.putString("iduser", idUser.toString())
                     intent.putExtras(bundle)
                     startActivity(intent)

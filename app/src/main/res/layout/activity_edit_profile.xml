@@ -9,6 +9,28 @@
     android:background="@drawable/pln">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_Back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="320dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="100dp">
+
+        <ImageView
+            android:id="@+id/Back"
+            android:layout_gravity="center"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/arrow_back"
+            android:clickable="true"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/cardProfile"
         android:layout_width="350dp"
         android:layout_height="550dp"
@@ -204,7 +226,7 @@
 
                     <Button
                         android:backgroundTint="@color/green"
-                        android:id="@+id/btn_SignUp"
+                        android:id="@+id/btn_Save"
                         android:layout_width="200dp"
                         android:layout_height="60dp"
                         android:layout_gravity="center"
@@ -259,7 +281,5 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
