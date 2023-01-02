@@ -7,6 +7,8 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.widget.Toast
+import java.text.SimpleDateFormat
+import java.util.*
 
 class DataHelper (var context: Context) : SQLiteOpenHelper(context,
     "rumah_sakit", null,1)
@@ -68,6 +70,8 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
             }
             return -1
         }
+
+
         @SuppressLint("Range")
         fun profile(id: Int) : Array<String>{
             val query = "SELECT nama,email,nomor,tglLahir FROM user WHERE id_user=$id"
@@ -77,8 +81,11 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
                 val email = rs.getString(rs.getColumnIndex("email"))
                 val nomor = rs.getString(rs.getColumnIndex("nomor"))
                 val tgl_lahir = rs.getString(rs.getColumnIndex("tglLahir"))
+                val parser = SimpleDateFormat("yyyy-MM-dd", Locale.US)
+                val formatter = SimpleDateFormat("dd-MM-yyyy", Locale.US)
+                val date = parser.parse(tgl_lahir)?.let { formatter.format(it) }
                 rs.close()
-                return arrayOf(nama,email,nomor,tgl_lahir)
+                return arrayOf(nama,email,nomor,date.toString())
             }
             return arrayOf("","","","","")
         }

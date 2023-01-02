@@ -1,7 +1,5 @@
 package com.example.itplnsehat.model
 
-import android.provider.ContactsContract.CommonDataKinds.Email
-
 class User {
     var nama : String = ""
     var email : String = ""
