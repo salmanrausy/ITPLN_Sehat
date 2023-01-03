@@ -9,18 +9,30 @@
         android:id="@+id/navi_home"
         android:name="com.example.itplnsehat.fragment.Home_Fragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home_"/>
+        tools:layout="@layout/fragment_home_">
+        <action
+            android:id="@+id/action_navi_home_to_navi_profile2"
+            app:destination="@id/navi_profile" />
+    </fragment>
 
     <fragment
         android:id="@+id/navi_profile"
         android:name="com.example.itplnsehat.fragment.Profile_Fragment"
         android:label="Profile"
-        tools:layout="@layout/fragment_profile_"/>
+        tools:layout="@layout/fragment_profile_">
+        <action
+            android:id="@+id/action_navi_profile_to_navi_jadwal"
+            app:destination="@id/navi_jadwal" />
+    </fragment>
 
     <fragment
         android:id="@+id/navi_jadwal"
         android:name="com.example.itplnsehat.fragment.JadwalFragment"
         android:label="Jadwal"
-        tools:layout="@layout/fragment_jadwal"/>
+        tools:layout="@layout/fragment_jadwal">
+        <action
+            android:id="@+id/action_navi_jadwal_to_navi_profile"
+            app:destination="@id/navi_profile" />
+    </fragment>
 
 </navigation>
