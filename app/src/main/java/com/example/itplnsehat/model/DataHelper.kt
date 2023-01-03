@@ -36,11 +36,13 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
                         " FOREIGN KEY(id_dokter) references dokter(id_dokter)); "
             val insertdata = "INSERT INTO dokter (nama,spesialis)VALUES ('Dr. Adi','Gigi'); "
             val insertdatauser = "INSERT INTO user (nama,email,nomor,tglLahir,password)VALUES ('Admin','admin','0834637322' ,'2001-12-09','admin'); "
+            val insertDataJadwal = "INSERT INTO jadwal (id_user,id_dokter,kunjungan,keterangan) VALUES (1,1,'2022-11-19','cek karang gigi');"
             db?.execSQL(createTableUser)
             db?.execSQL(createTableDokter)
             db?.execSQL(createTableJadwal)
             db?.execSQL(insertdata)
             db?.execSQL(insertdatauser)
+            db?.execSQL(insertDataJadwal)
         }
         override fun onUpgrade(db: SQLiteDatabase?,oldVersion: Int,newVersion:
         Int) {
@@ -72,8 +74,8 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
         }
 
         fun getAllJadwal(): List<Jadwal>{
-            var lsJadwal: MutableList<Jadwal> = ArrayList<Jadwal>()
-            val sql: String = "SELECT * FROM jadwal"
+            val lsJadwal: MutableList<Jadwal> = ArrayList<Jadwal>()
+            val sql = "SELECT id_user, id_dokter,kunjungan,keterangan  FROM jadwal"
             val cursor = db.rawQuery(sql, null)
             if(cursor.moveToFirst()) {
                 do {
@@ -82,7 +84,7 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
 
                 } while (cursor.moveToNext())
             }
-
+            db.close()
             return lsJadwal
         }
 

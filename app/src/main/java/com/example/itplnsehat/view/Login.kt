@@ -36,19 +36,7 @@ class Login : AppCompatActivity() {
                 val idUser = db.checkUser(Email.text.toString(),Password.text.toString())
                 if (idUser>0){
                     val bundle = Bundle()
-
-//                    val HomeFragment = Home_Fragment()
-//                    val fragment : Fragment? = supportFragmentManager.findFragmentByTag(
-//                        HomeFragment::class.java.simpleName)
-//
-//                    if (fragment !is Profile_Fragment){
-//                        supportFragmentManager.beginTransaction()
-//                            .add(R.id.container_fragment, HomeFragment, Home_Fragment::class.java.simpleName)
-//                            .commit()
-//                    }
-//                    buttonLogin.visibility = View.GONE
-
-                    intent = Intent(this, Home_Fragment::class.java)
+                    intent = Intent(this, Beranda::class.java)
                     bundle.putString("iduser", idUser.toString())
                     intent.putExtras(bundle)
                     startActivity(intent)

@@ -1,6 +1,5 @@
 package com.example.itplnsehat.fragment
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,11 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.itplnsehat.R
-import com.example.itplnsehat.databinding.FragmentHomeBinding
 import com.example.itplnsehat.model.DataHelper
-import com.example.itplnsehat.view.EditProfile
-import com.example.itplnsehat.view.Login
-import kotlinx.android.synthetic.main.fragment_profile_.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -22,19 +17,7 @@ class Profile_Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val bind = FragmentHomeBinding.inflate(layoutInflater)
-
-        btn_EditProfile.setOnClickListener{
-            val intent = Intent (this@Profile_Fragment.requireContext(),EditProfile::class.java)
-            startActivity(intent)
-        }
-
-        btn_LogOut.setOnClickListener{
-            val intent = Intent (this@Profile_Fragment.requireContext(),Login::class.java)
-            startActivity(intent)
-        }
-
-        return bind.root
+        return inflater.inflate(R.layout.fragment_profile_, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
