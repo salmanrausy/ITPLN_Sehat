@@ -71,6 +71,20 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
             return -1
         }
 
+        fun getAllJadwal(): List<Jadwal>{
+            var lsJadwal: MutableList<Jadwal> = ArrayList<Jadwal>()
+            val sql: String = "SELECT * FROM jadwal"
+            val cursor = db.rawQuery(sql, null)
+            if(cursor.moveToFirst()) {
+                do {
+                    val jadwal1 = Jadwal(cursor.getInt(0) ,cursor.getInt(1),  cursor.getString(2), cursor.getString(3))
+                    lsJadwal.add(jadwal1)
+
+                } while (cursor.moveToNext())
+            }
+
+            return lsJadwal
+        }
 
         @SuppressLint("Range")
         fun profile(id: Int) : Array<String>{
