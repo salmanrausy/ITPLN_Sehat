@@ -14,6 +14,20 @@
         android:theme="@style/Theme.ITPLNSehat"
         tools:targetApi="31">
         <activity
+            android:name=".Spesialis_Pulmonologi"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Spesialis_Kardiologi"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".view.EditProfile"
             android:exported="false">
             <meta-data

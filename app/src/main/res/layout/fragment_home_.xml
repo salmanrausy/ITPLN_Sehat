@@ -62,7 +62,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Dr. Banner"
+                            android:text="@string/dr_banner"
                             android:textSize="14sp"
                             android:fontFamily="@font/didact_gothic"
                             android:textColor="@color/bgDaftar"
@@ -95,7 +95,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Dr. Kamaludin"
+                            android:text="@string/dr_kamaludin"
                             android:textSize="14sp"
                             android:fontFamily="@font/didact_gothic"
                             android:textColor="@color/bgDaftar"
@@ -128,7 +128,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Dr. Kehfa"
+                            android:text="@string/dr_kehfa"
                             android:textSize="14sp"
                             android:fontFamily="@font/didact_gothic"
                             android:textColor="@color/bgDaftar"
@@ -161,7 +161,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Dr. Lucille"
+                            android:text="@string/dr_lucille"
                             android:textSize="14sp"
                             android:fontFamily="@font/didact_gothic"
                             android:textColor="@color/bgDaftar"
@@ -194,7 +194,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Dr. Meisya"
+                            android:text="@string/dr_meisya"
                             android:textSize="14sp"
                             android:fontFamily="@font/didact_gothic"
                             android:textColor="@color/bgDaftar"
@@ -227,7 +227,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Dr. Strange"
+                            android:text="@string/dr_strange"
                             android:textSize="14sp"
                             android:fontFamily="@font/didact_gothic"
                             android:textColor="@color/bgDaftar"

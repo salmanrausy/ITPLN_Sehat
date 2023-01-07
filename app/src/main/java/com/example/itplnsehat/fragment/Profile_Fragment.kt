@@ -1,5 +1,7 @@
 package com.example.itplnsehat.fragment
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +10,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.example.itplnsehat.R
 import com.example.itplnsehat.model.DataHelper
+import kotlinx.android.synthetic.main.fragment_home_.*
+import kotlinx.android.synthetic.main.fragment_profile_.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -23,6 +27,12 @@ class Profile_Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialized(view)
+
+        btn_Website.setOnClickListener{
+            val m  = Intent(Intent.ACTION_VIEW)
+            m.setData(Uri.parse("https://tasyaaku.github.io/ap/"))
+            startActivity(m)
+        }
     }
 
     fun initialized (v : View){

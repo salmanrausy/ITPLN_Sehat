@@ -39,4 +39,12 @@
     <string name="our_website">Our Website</string>
     <string name="save">save</string>
     <string name="clear">clear</string>
+    <string name="spesialis_pulmonologi">Spesialis Pulmonologi</string>
+    <string name="dr_banner">Dr. Banner</string>
+    <string name="dr_kamaludin">Dr. Kamaludin</string>
+    <string name="dr_kehfa">Dr. Kehfa</string>
+    <string name="dr_lucille">Dr. Lucille</string>
+    <string name="dr_meisya">Dr. Meisya</string>
+    <string name="dr_strange">Dr. Strange</string>
+    <string name="spesialis_jantung">Spesialis Kardiologi</string>
 </resources>
