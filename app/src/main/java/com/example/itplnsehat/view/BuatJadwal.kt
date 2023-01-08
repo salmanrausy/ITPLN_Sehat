@@ -79,7 +79,6 @@ class BuatJadwal : AppCompatActivity(){
                 position: Int,
                 id: Long
             ) {
-                HasilPilihan.setText("Anda Memilih : " + list_Doctor[position])
                 Toast.makeText(applicationContext, "Anda Memilih : " + list_Doctor[position], Toast.LENGTH_SHORT).show()
             }
 

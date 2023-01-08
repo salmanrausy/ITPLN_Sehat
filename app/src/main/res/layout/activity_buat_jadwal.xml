@@ -87,22 +87,11 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/HasilPilihan"
-                android:layout_width="315dp"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:fontFamily="@font/cantarell"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"/>
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/datePickerGroup"
             android:layout_width="315dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:layout_gravity="center">
 
             <androidx.cardview.widget.CardView
@@ -144,6 +133,27 @@
                 app:layout_constraintStart_toEndOf="@+id/cardDatePicker"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="315dp"
+                android:layout_height="40dp"
+                app:cardCornerRadius="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center"
+                android:elevation="50dp">
+
+                <EditText
+                    android:layout_width="325dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@color/lightBlue"
+                    android:paddingHorizontal="20dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:hint="@string/keterangan"/>
+
+            </androidx.cardview.widget.CardView>
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
