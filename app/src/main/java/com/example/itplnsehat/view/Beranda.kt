@@ -34,9 +34,9 @@ class Beranda : AppCompatActivity() {
     }
 
     private fun setupNaviBottom() {
-        fm.beginTransaction().add(R.id.navi_content, fragHome).show(fragHome).commit()
         fm.beginTransaction().add(R.id.navi_content, fragProfile).show(fragProfile).commit()
         fm.beginTransaction().add(R.id.navi_content, fragJadwal).show(fragJadwal).commit()
+        fm.beginTransaction().add(R.id.navi_content, fragHome).show(fragHome).commit()
 
         menu = btn_navi_view.menu
         menuItem = menu.getItem(0)

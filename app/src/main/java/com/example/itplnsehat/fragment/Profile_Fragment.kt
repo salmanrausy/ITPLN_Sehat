@@ -9,7 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.itplnsehat.R
+import com.example.itplnsehat.databinding.FragmentHomeBinding
+import com.example.itplnsehat.databinding.FragmentProfileBinding
 import com.example.itplnsehat.model.DataHelper
+import com.example.itplnsehat.view.BuatJadwal
+import com.example.itplnsehat.view.Login
 import kotlinx.android.synthetic.main.fragment_home_.*
 import kotlinx.android.synthetic.main.fragment_profile_.*
 import java.text.SimpleDateFormat
@@ -20,8 +24,14 @@ class Profile_Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile_, container, false)
+        val bind = FragmentProfileBinding.inflate(layoutInflater)
+
+        bind.btnLogOut.setOnClickListener{
+            val intent = Intent(this@Profile_Fragment.requireContext(), Login::class.java)
+            startActivity(intent)
+        }
+
+        return bind.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

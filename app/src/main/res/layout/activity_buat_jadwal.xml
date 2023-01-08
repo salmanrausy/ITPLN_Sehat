@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.BuatJadwal"
-    android:background="@drawable/pln">
+    android:background="@drawable/pln"
+    android:id="@+id/container_BuatJadwal">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_Back"

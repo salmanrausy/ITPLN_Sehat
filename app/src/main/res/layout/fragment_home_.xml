@@ -8,6 +8,7 @@
     tools:context=".fragment.Home_Fragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_fragment_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/pln">
@@ -254,7 +255,7 @@
 
 
         <TextView
-            android:id="@+id/Txt_BuatJanji"
+            android:id="@+id/txt_BuatJanji"
             android:layout_width="260dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -363,7 +364,7 @@
                                     android:layout_marginRight="10dp"/>
 
                                 <TextView
-                                    android:id="@+id/Txt_Jantung"
+                                    android:id="@+id/txtJantung"
                                     android:layout_width="wrap_content"
                                     android:layout_height="35dp"
                                     android:layout_gravity="center"
@@ -403,7 +404,7 @@
                                     android:layout_marginRight="10dp"/>
 
                                 <TextView
-                                    android:id="@+id/Txt_Paru"
+                                    android:id="@+id/txtParu"
                                     android:layout_width="wrap_content"
                                     android:layout_height="35dp"
                                     android:layout_gravity="center"
