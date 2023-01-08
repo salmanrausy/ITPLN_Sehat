@@ -51,13 +51,4 @@
     <string name="buat_jadwal_anda">Buat Jadwal Anda</string>
     <string name="pilih_dokter">Pilih Dokter</string>
     <string name="cancel">cancel</string>
-
-    <string-array name="list_dokter">
-        <item>Dr. Banner</item>
-        <item>Dr. Kamaludin</item>
-        <item>Dr. Kehfa</item>
-        <item>Dr.Lucille</item>
-        <item>Dr.Meisya</item>
-        <item>Dr. Strange</item>
-    </string-array>
 </resources>

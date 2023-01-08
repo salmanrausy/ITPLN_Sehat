@@ -117,7 +117,7 @@
                 <Button
                     android:layout_width="120dp"
                     android:layout_height="60dp"
-                    android:id="@+id/btn_DatePicker"
+                    android:id="@+id/btn_DatePickerJadwal"
                     android:textColor="@color/black"
                     android:text="Date"
                     android:fontFamily="sans-serif-condensed"
