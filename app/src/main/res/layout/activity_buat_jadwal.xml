@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.EditProfile"
+    tools:context=".view.BuatJadwal"
     android:background="@drawable/pln">
 
     <androidx.cardview.widget.CardView
@@ -36,7 +36,7 @@
         android:layout_height="550dp"
         android:layout_centerInParent="true"
         app:cardCornerRadius="20dp"
-        android:backgroundTint="@color/bgMain"
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,91 +48,60 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/ic_Profile"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/ic_profile_circle"
-                android:layout_gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:src="@drawable/picture4"
                 android:layout_marginTop="40dp"/>
-
-        <TextView
-            android:id="@+id/Sign_in"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:fontFamily="sans-serif"
-            android:text="@string/EditProfile"
-            android:textColor="@color/fontWhite"
-            android:textSize="28sp"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Logo" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardFullName"
-            android:layout_width="315dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="20dp"
-            app:cardBackgroundColor="@color/cardview_shadow_end_color"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="100dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <EditText
-                android:id="@+id/fullName_edit"
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
+                android:text="@string/buat_jadwal_anda"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:fontFamily="@font/didact_gothic"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"/>
+
+            <LinearLayout
+                android:layout_width="315dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:layout_gravity="center"
-                android:background="@drawable/bgedittext"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:hint="@string/fullName"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pilih_dokter"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/cantarell"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"/>
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/msg"
+                android:layout_width="315dp"
+                android:layout_height="wrap_content"
+                android:text=""
                 android:textColor="@color/black"
-                android:paddingLeft="15dp"
-                android:paddingEnd="15dp"
-                android:textSize="14sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardEmail"
-            android:layout_width="315dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
-            app:cardBackgroundColor="@color/cardview_shadow_end_color"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="100dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <EditText
-                android:id="@+id/Email_edit"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:textSize="16sp"
+                android:fontFamily="@font/cantarell"
                 android:layout_gravity="center"
-                android:background="@drawable/bgedittext"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:hint="@string/email"
-                android:textColor="@color/black"
-                android:paddingLeft="15dp"
-                android:paddingEnd="15dp"
-                android:textSize="14sp" />
-
-        </androidx.cardview.widget.CardView>
+                android:layout_marginTop="10dp"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/datePickerGroup"
             android:layout_width="315dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_gravity="center">
 
             <androidx.cardview.widget.CardView
@@ -165,8 +134,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/cantarell"
                 android:textAlignment="viewStart"
-                android:text="@string/Born"
-                android:textColor="@color/fontWhite"
+                android:text="Jadwal Anda : "
+                android:textColor="@color/black"
                 android:textSize="14sp"
                 android:layout_marginLeft="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -175,41 +144,11 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardTelpon"
-            android:layout_width="315dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
-            app:cardBackgroundColor="@color/cardview_shadow_end_color"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="100dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <EditText
-                android:id="@+id/Nomor_edit"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:inputType="phone"
-                android:background="@drawable/bgedittext"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:hint="@string/nomor_telp"
-                android:textColor="@color/black"
-                android:paddingLeft="15dp"
-                android:paddingEnd="15dp"
-                android:textSize="14sp" />
-
-        </androidx.cardview.widget.CardView>
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_gravity="center">
 
                 <androidx.cardview.widget.CardView
@@ -219,10 +158,7 @@
                     android:layout_gravity="left"
                     android:clickable="true"
                     app:cardCornerRadius="30dp"
-                    app:cardElevation="100dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cardTelpon">
+                    app:cardElevation="100dp">
 
                     <Button
                         android:backgroundTint="@color/green"
@@ -246,10 +182,7 @@
                     android:layout_marginLeft="10dp"
                     android:clickable="true"
                     app:cardCornerRadius="30dp"
-                    app:cardElevation="100dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cardTelpon">
+                    app:cardElevation="100dp">
 
                     <Button
                         android:backgroundTint="@color/red"
@@ -259,7 +192,7 @@
                         android:layout_gravity="center"
                         android:fontFamily="@font/cantarell"
                         android:gravity="center"
-                        android:text="@string/clear"
+                        android:text="@string/cancel"
                         android:textColor="@color/fontWhite"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -274,9 +207,9 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/didact_gothic"
                 android:text="@string/design_by"
-                android:textColor="@color/fontWhite"
+                android:textColor="@color/black"
                 android:textSize="14sp"
-                android:layout_marginTop="35dp"/>
+                android:layout_marginTop="50dp"/>
 
         </LinearLayout>
 

@@ -48,4 +48,7 @@
     <string name="dr_strange">Dr. Strange</string>
     <string name="spesialis_jantung">Spesialis Kardiologi</string>
     <string name="jadwal_anda">Jadwal Anda</string>
+    <string name="buat_jadwal_anda">Buat Jadwal Anda</string>
+    <string name="pilih_dokter">Pilih Dokter</string>
+    <string name="cancel">cancel</string>
 </resources>
