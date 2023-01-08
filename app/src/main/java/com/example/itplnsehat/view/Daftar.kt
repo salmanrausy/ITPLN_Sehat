@@ -25,15 +25,17 @@ class Daftar : AppCompatActivity() {
         //Find Id Button
         val Button_SignUp = findViewById<Button>(R.id.btn_SignUp) //mencari id Button 'cardSubmit' di file activity_daftar
         btnDatePicker = findViewById<Button>(R.id.btn_DatePicker) //mencari id Button 'cardDatePicker' di file activity_daftar
+
         //Find Id EditText
         val Full_Name = findViewById<EditText>(R.id.fullName) //mencari id EditText 'fullname' di file activity_daftar
         val nomor_daftar = findViewById<EditText>(R.id.Nomor_daftar) //mencari id EditText 'username_daftar' di file activity_daftar
         val Password_daftar = findViewById<EditText>(R.id.password_daftar) //mencari id EditText 'password_daftar' di file activity_daftar
         val Email = findViewById<EditText>(R.id.Email) //mencari id TextView 'Email' di file activity_daftar
+
         //Find id TextView
         val myCalendar = Calendar.getInstance()
         val tv_SignIn = findViewById<TextView>(R.id.SignIn_daftar) //mencari id TextView 'SignIn_daftar' di file activity_daftar
-        tvDatePicker = findViewById(R.id.born) //mencari id Button 'born' di file activity_daftar
+        tvDatePicker = findViewById(R.id.born) //mencari id TextView 'born' di file activity_daftar
 
         tv_SignIn.setOnClickListener{
             val intent = Intent(this, Login::class.java)

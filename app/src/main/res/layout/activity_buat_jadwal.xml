@@ -129,12 +129,12 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/born_edit"
+                android:id="@+id/JadwalAnda"
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/cantarell"
                 android:textAlignment="viewStart"
-                android:text="Jadwal Anda : "
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:layout_marginLeft="5dp"

@@ -11,12 +11,14 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class BuatJadwal : AppCompatActivity(){
+
     private lateinit var tvDatePicker: TextView
     private lateinit var btnDatePicker: Button
 
     val list_Doctor = arrayOf("Dr. Banner", "Dr. Kamaludin", "Dr. Kehfa", "Dr. Lucille", "Dr. Meisya", "Dr. Strange")
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buat_jadwal)
 
@@ -25,7 +27,7 @@ class BuatJadwal : AppCompatActivity(){
 
         //Find id TextView
         val myCalendar = Calendar.getInstance()
-        tvDatePicker = findViewById(R.id.btn_DatePickerJadwal) //mencari id Button 'born' di file activity_daftar
+        tvDatePicker = findViewById<TextView>(R.id.JadwalAnda) //mencari id Button 'born' di file activity_daftar
 
         val datePicker = DatePickerDialog.OnDateSetListener { view, year, month,
                                                               dayofmonth ->
