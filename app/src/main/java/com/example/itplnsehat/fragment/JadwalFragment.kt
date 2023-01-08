@@ -1,62 +1,70 @@
 package com.example.itplnsehat.fragment
 
 
+import android.graphics.Color
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TableLayout
+import android.widget.TableRow
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.itplnsehat.R
 import com.example.itplnsehat.model.DataHelper
 import com.example.itplnsehat.model.Jadwal
-import kotlinx.android.synthetic.main.fragment_jadwal.*
 
 
 class JadwalFragment : Fragment() {
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var view : View =  inflater.inflate(R.layout.fragment_jadwal, container, false)
-
-        return view
+        return inflater.inflate(R.layout.fragment_jadwal, container, false)
     }
 
-    fun initialized (v : View) {
+    private fun initialized (v : View) {
+        val idUser = activity?.intent!!.getStringExtra("iduser").toString().toInt()
         val db = DataHelper(v.context)
 
-        val data : List<Jadwal> = db.getAllJadwal()
+        val data : List<Jadwal> = db.getJadwal(idUser)
 
-        val tableLayout = view?.findViewById<TableLayout>(com.example.itplnsehat.R.id.tableLayout)
-
+        var i = 0
         for (jadwal in data) {
-            val tableRow: View = LayoutInflater.from(v.context).inflate(R.layout.table_item, null, false)
+            i += 1
+            val newRow = TableRow(v.context)
+            val tv1 = TextView(v.context)
+            val tv2 = TextView(v.context)
+            val tv3 = TextView(v.context)
+            val tvNomor = TextView(v.context)
 
-            val nama = view?.findViewById<TextView>(R.id.noTable)
-            val dokter = view?.findViewById<TextView>(R.id.dokterTable)
-            val keterangan = view?.findViewById<TextView>(R.id.keteranganTable)
-            val kunjungan = view?.findViewById<TextView>(R.id.kunjunganTable)
+            tvNomor.text = i.toString()
+            tvNomor.setTextColor(Color.WHITE)
+            tvNomor.gravity = Gravity.CENTER
 
-            if (nama != null) {
-                nama.text = jadwal.id_user.toString()
-            }
-            if (dokter != null) {
-                dokter.text = jadwal.id_dokter.toString()
-            }
-            if (keterangan != null) {
-                keterangan.text = jadwal.keterangan
-            }
-            if (kunjungan != null) {
-                kunjungan.text = jadwal.kunjungan
-            }
-            if (tableLayout != null) {
-                tableLayout.addView(tableRow)
-            }
+
+            tv1.text = jadwal.id_dokter.toString()
+            tv1.setTextColor(Color.WHITE)
+            tv1.gravity = Gravity.CENTER
+
+            tv2.text = jadwal.keterangan
+            tv2.setTextColor(Color.WHITE)
+            tv2.gravity = Gravity.CENTER
+
+            tv3.text = jadwal.kunjungan
+            tv3.setTextColor(Color.WHITE)
+            tv3.gravity = Gravity.CENTER
+
+            newRow.addView(tvNomor)
+            newRow.addView(tv1)
+            newRow.addView(tv2)
+            newRow.addView(tv3)
+
+            view?.findViewById<TableLayout>(R.id.tableLayout)?.addView(newRow)
+
         }
 
 

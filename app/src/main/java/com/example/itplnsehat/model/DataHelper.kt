@@ -34,9 +34,15 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
                         " keterangan VARCHAR(100)," +
                         " FOREIGN KEY(id_user) references user(id_user)," +
                         " FOREIGN KEY(id_dokter) references dokter(id_dokter)); "
-            val insertdata = "INSERT INTO dokter (nama,spesialis)VALUES ('Dr. Adi','Gigi'); "
+            val insertdata = "INSERT INTO dokter (nama,spesialis)VALUES " +
+                    "('Dr. Banner ','Jantung')," +
+                    "('Dr. Kamaludin ','Paru')," +
+                    "('Dr. Kehfa ','otak dan sistem saraf')," +
+                    "('Dr. Lucille' ,'Mataa')," +
+                    "('Dr. Meisya ','Anak')," +
+                    "('Dr. Strange' ,'Tulang'); "
             val insertdatauser = "INSERT INTO user (nama,email,nomor,tglLahir,password)VALUES ('Admin','admin','0834637322' ,'2001-12-09','admin'); "
-            val insertDataJadwal = "INSERT INTO jadwal (id_user,id_dokter,kunjungan,keterangan) VALUES (1,1,'2022-11-19','cek karang gigi');"
+            val insertDataJadwal = "INSERT INTO jadwal (id_user,id_dokter,kunjungan,keterangan) VALUES (1,1,'2022-11-19','cek kesehatan jantung');"
             db?.execSQL(createTableUser)
             db?.execSQL(createTableDokter)
             db?.execSQL(createTableJadwal)
@@ -63,7 +69,7 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
 
         @SuppressLint("Range")
         fun checkUser(email: String, password: String): Int {
-            val query = "SELECT * FROM user WHERE email='" + email + "' AND password='" + password + "'"
+            val query = "SELECT * FROM user WHERE email='$email' AND password='$password'"
             val rs = db.rawQuery(query, null)
             if (rs.moveToFirst()) {
                 val idUser = rs.getInt(rs.getColumnIndex("id_user"))
@@ -73,18 +79,18 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
             return -1
         }
 
-        fun getAllJadwal(): List<Jadwal>{
+        fun getJadwal(id: Int): List<Jadwal>{
             val lsJadwal: MutableList<Jadwal> = ArrayList<Jadwal>()
-            val sql = "SELECT id_user, id_dokter,kunjungan,keterangan  FROM jadwal"
+            val sql = "SELECT dokter.nama, jadwal.kunjungan, jadwal.keterangan FROM jadwal INNER JOIN dokter ON dokter.id_dokter = jadwal.id_dokter WHERE jadwal.id_user = $id"
             val cursor = db.rawQuery(sql, null)
             if(cursor.moveToFirst()) {
                 do {
-                    val jadwal1 = Jadwal(cursor.getInt(0) ,cursor.getInt(1),  cursor.getString(2), cursor.getString(3))
+                    val jadwal1 = Jadwal(cursor.getString(0),cursor.getString(1),  cursor.getString(2))
                     lsJadwal.add(jadwal1)
 
                 } while (cursor.moveToNext())
             }
-            db.close()
+            cursor.close()
             return lsJadwal
         }
 
