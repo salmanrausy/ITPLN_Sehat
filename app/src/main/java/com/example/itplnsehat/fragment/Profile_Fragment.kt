@@ -54,12 +54,6 @@ class Profile_Fragment : Fragment() {
         val idUser = activity?.intent!!.getStringExtra("iduser").toString()
         val profile = db.profile(idUser.toInt())
 
-//        val parser = SimpleDateFormat("yyyy-MM-dd", Locale.UK)
-//        val formatter = SimpleDateFormat("dd-MM-yyyy", Locale.UK)
-//        val date = formatter.format(parser.parse(profile[3]))
-        //val localDate = LocalDate.parse("2022-01-06")
-        val formatter = SimpleDateFormat("dd-MM-yyyy",Locale.UK)
-        val date = formatter.parse(profile[3])
 
         if (tvNama != null) {
             tvNama.text = profile[0]
@@ -71,7 +65,7 @@ class Profile_Fragment : Fragment() {
             tvPhone.text = profile[2]
         }
         if (tvLahir != null) {
-            tvLahir.text = date.toString()
+            tvLahir.text = profile[3]
         }
     }
 }
