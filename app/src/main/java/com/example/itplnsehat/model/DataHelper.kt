@@ -61,7 +61,7 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
             cv.put("tglLahir" , tgl)
             cv.put("password",user.password)
             val result = db.insert("user", null, cv)
-            if (result == -1.toLong())
+            if (result == (-1).toLong())
                 Toast.makeText(context, "FAILED", Toast.LENGTH_SHORT).show()
             else
                 Toast.makeText(context, "ADD ACCOUNT SUCCESS", Toast.LENGTH_SHORT).show()
@@ -74,7 +74,7 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
             cv.put("keterangan",jadwal.keterangan)
             cv.put("id_user", idUser)
             val result = db.insert("jadwal", null, cv)
-            if (result == -1.toLong())
+            if (result == (-1).toLong())
                 Toast.makeText(context, "FAILED", Toast.LENGTH_SHORT).show()
             else
                 Toast.makeText(context, "ADD ACCOUNT SUCCESS", Toast.LENGTH_SHORT).show()

@@ -1,5 +1,6 @@
 package com.example.itplnsehat.fragment
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -30,10 +31,13 @@ class Profile_Fragment : Fragment() {
 
     }
 
+    @SuppressLint("SimpleDateFormat")
     fun initialized (v : View){
         val db = DataHelper(v.context)
         view?.findViewById<Button>(R.id.btnLogOut)?.setOnClickListener {
+            //val intent = Intent(this@Profile_Fragment.requireContext(), Login::class.java)
             val intent = Intent(this@Profile_Fragment.requireContext(), Login::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             startActivity(intent)
         }
         view?.findViewById<Button>(R.id.btn_Website)?.setOnClickListener{
@@ -50,9 +54,12 @@ class Profile_Fragment : Fragment() {
         val idUser = activity?.intent!!.getStringExtra("iduser").toString()
         val profile = db.profile(idUser.toInt())
 
-        val parser = SimpleDateFormat("yyyy-MM-dd", Locale.UK)
-        val formatter = SimpleDateFormat("dd-MM-yyyy", Locale.UK)
-        val date = formatter.format(parser.parse(profile[3]))
+//        val parser = SimpleDateFormat("yyyy-MM-dd", Locale.UK)
+//        val formatter = SimpleDateFormat("dd-MM-yyyy", Locale.UK)
+//        val date = formatter.format(parser.parse(profile[3]))
+        //val localDate = LocalDate.parse("2022-01-06")
+        val formatter = SimpleDateFormat("dd-MM-yyyy",Locale.UK)
+        val date = formatter.parse(profile[3])
 
         if (tvNama != null) {
             tvNama.text = profile[0]
@@ -64,7 +71,7 @@ class Profile_Fragment : Fragment() {
             tvPhone.text = profile[2]
         }
         if (tvLahir != null) {
-            tvLahir.text = date
+            tvLahir.text = date.toString()
         }
     }
 }

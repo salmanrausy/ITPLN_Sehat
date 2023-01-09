@@ -15,12 +15,12 @@ import kotlinx.android.synthetic.main.activity_beranda.*
 import java.util.*
 
 class Beranda : AppCompatActivity() {
-    val fragHome : Fragment = Home_Fragment()
-    val fragProfile : Fragment = Profile_Fragment()
-    val fragJadwal : Fragment = JadwalFragment()
+    private val fragHome : Fragment = Home_Fragment()
+    private val fragProfile : Fragment = Profile_Fragment()
+    private val fragJadwal : Fragment = JadwalFragment()
 
-    val fm : FragmentManager = supportFragmentManager
-    var active : Fragment = fragHome
+    private val fm : FragmentManager = supportFragmentManager
+    private var active : Fragment = fragHome
 
     private lateinit var menu : Menu
     private lateinit var menuItem : MenuItem
@@ -54,9 +54,7 @@ class Beranda : AppCompatActivity() {
                     callFrag(2, fragJadwal)
                 }
             }
-            false
         }
-
     }
 
     private fun callFrag(i: Int, fragment: Fragment) {

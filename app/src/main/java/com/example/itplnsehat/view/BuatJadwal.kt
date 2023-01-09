@@ -1,5 +1,6 @@
 package com.example.itplnsehat.view
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,8 +8,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import com.example.itplnsehat.R
-import com.example.itplnsehat.fragment.Home_Fragment
-import com.example.itplnsehat.fragment.JadwalFragment
 import com.example.itplnsehat.model.DataHelper
 import com.example.itplnsehat.model.Jadwal
 import java.text.SimpleDateFormat
@@ -18,6 +17,7 @@ class BuatJadwal : AppCompatActivity(){
     private lateinit var tvDatePicker: TextView
     private lateinit var btnDatePicker: Button
 
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buat_jadwal)
@@ -28,9 +28,7 @@ class BuatJadwal : AppCompatActivity(){
         val btnSave : Button = findViewById(R.id.btn_Save)
         val btnCancel : Button = findViewById(R.id.btn_clear)
         val edKeterangan : EditText = findViewById(R.id.edtKeterangan)
-        val mFragmentManager = supportFragmentManager
-        val mFragmentTransaction = mFragmentManager.beginTransaction()
-        val mFragment = JadwalFragment()
+
         //Find Id Button
         btnDatePicker = findViewById(R.id.btn_DatePickerJadwal) //mencari id Button 'cardDatePicker' di file activity_buat_jadwal
 
@@ -38,7 +36,7 @@ class BuatJadwal : AppCompatActivity(){
         val myCalendar = Calendar.getInstance()
         tvDatePicker = findViewById(R.id.JadwalAnda) //mencari id Button 'born' di file activity_daftar
 
-        val datePicker = DatePickerDialog.OnDateSetListener { view, year, month,
+        val datePicker = DatePickerDialog.OnDateSetListener { _, year, month,
                                                               dayofmonth ->
             myCalendar.set(Calendar.YEAR, year)
             myCalendar.set(Calendar.MONTH, month)
@@ -53,7 +51,7 @@ class BuatJadwal : AppCompatActivity(){
         }
         var getIdDokter = 0
         val spinner = findViewById<Spinner>(R.id.spinner)
-        val arrayAdapter = ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item, list_Doctor)
+        val arrayAdapter = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item, list_Doctor)
         spinner.adapter = arrayAdapter
         spinner.onItemSelectedListener = object :  AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -75,7 +73,11 @@ class BuatJadwal : AppCompatActivity(){
         btnSave.setOnClickListener {
             val jadwal = Jadwal(getIdDokter.toString(),edKeterangan.text.toString(),getDate(myCalendar))
             db.insertJadwal(jadwal,idUser)
-            mFragmentTransaction.add(R.id.JadwalFragment, mFragment).commit()
+            val bundle = Bundle()
+            val intent = Intent(this, Beranda::class.java)
+            bundle.putString("iduser", idUser.toString())
+            intent.putExtras(bundle)
+            startActivity(intent)
         }
 
         btnCancel.setOnClickListener {
