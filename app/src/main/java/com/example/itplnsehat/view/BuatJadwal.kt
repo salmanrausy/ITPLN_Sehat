@@ -22,7 +22,7 @@ class BuatJadwal : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buat_jadwal)
         val db = DataHelper(this)
-        val list_Doctor = arrayOf("Dr. Banner", "Dr. Kamaludin", "Dr. Kehfa", "Dr. Lucille", "Dr. Meisya", "Dr. Strange")
+        val list_Doctor = arrayOf("", "Dr. Banner", "Dr. Kamaludin", "Dr. Kehfa", "Dr. Lucille", "Dr. Meisya", "Dr. Strange")
         val bundle :Bundle ?=intent.extras
         val idUser = bundle!!.getString("iduser")
         val btnSave : Button = findViewById(R.id.btn_Save)
@@ -60,7 +60,7 @@ class BuatJadwal : AppCompatActivity(){
                 position: Int,
                 id: Long
             ) {
-                getIdDokter = position + 1
+                getIdDokter = position + 2
 //                HasilPilihan.setText("Anda Memilih : " + list_Doctor[position])
 //                Toast.makeText(applicationContext, "Anda Memilih : " + list_Doctor[position], Toast.LENGTH_SHORT).show()
             }
@@ -81,7 +81,10 @@ class BuatJadwal : AppCompatActivity(){
         }
 
         btnCancel.setOnClickListener {
+            spinner.setSelection(0)
+            tvDatePicker.setText("")
             edKeterangan.setText("")
+
         }
     }
 

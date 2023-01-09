@@ -77,7 +77,7 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
             if (result == (-1).toLong())
                 Toast.makeText(context, "FAILED", Toast.LENGTH_SHORT).show()
             else
-                Toast.makeText(context, "ADD ACCOUNT SUCCESS", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "TAMBAH JADWAL SUKSES!", Toast.LENGTH_SHORT).show()
         }
 
         @SuppressLint("Range")

@@ -181,7 +181,7 @@
                         android:layout_gravity="center"
                         android:fontFamily="@font/cantarell"
                         android:gravity="center"
-                        android:hint="@string/save"
+                        android:text="@string/save"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
