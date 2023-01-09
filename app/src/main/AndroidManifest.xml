@@ -14,7 +14,7 @@
         android:theme="@style/Theme.ITPLNSehat"
         tools:targetApi="31">
         <activity
-            android:name=".Spesialis_Pulmonologi"
+            android:name=".view.Spesialis_Pulmonologi"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <meta-data
@@ -22,7 +22,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Spesialis_Kardiologi"
+            android:name=".view.Spesialis_Kardiologi"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <meta-data

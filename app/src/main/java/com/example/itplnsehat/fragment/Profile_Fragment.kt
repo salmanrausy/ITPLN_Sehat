@@ -7,15 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import com.example.itplnsehat.R
-import com.example.itplnsehat.databinding.FragmentHomeBinding
-import com.example.itplnsehat.databinding.FragmentProfileBinding
 import com.example.itplnsehat.model.DataHelper
-import com.example.itplnsehat.view.BuatJadwal
 import com.example.itplnsehat.view.Login
-import kotlinx.android.synthetic.main.fragment_home_.*
-import kotlinx.android.synthetic.main.fragment_profile_.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -24,30 +20,27 @@ class Profile_Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val bind = FragmentProfileBinding.inflate(layoutInflater)
-
-        bind.btnLogOut.setOnClickListener{
-            val intent = Intent(this@Profile_Fragment.requireContext(), Login::class.java)
-            startActivity(intent)
-        }
-
-        return bind.root
+        return inflater.inflate(R.layout.fragment_profile_, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialized(view)
 
-        btn_Website.setOnClickListener{
-            val m  = Intent(Intent.ACTION_VIEW)
-            m.setData(Uri.parse("https://tasyaaku.github.io/ap/"))
-            startActivity(m)
-        }
+
     }
 
     fun initialized (v : View){
         val db = DataHelper(v.context)
-
+        view?.findViewById<Button>(R.id.btnLogOut)?.setOnClickListener {
+            val intent = Intent(this@Profile_Fragment.requireContext(), Login::class.java)
+            startActivity(intent)
+        }
+        view?.findViewById<Button>(R.id.btn_Website)?.setOnClickListener{
+            val m  = Intent(Intent.ACTION_VIEW)
+            m.setData(Uri.parse("https://tasyaaku.github.io/ap/"))
+            startActivity(m)
+        }
         val tvNama = view?.findViewById<TextView>(R.id.text_NamaUser)
         val tvemail = view?.findViewById<TextView>(R.id.text_EmailUser)
         val tvLahir = view?.findViewById<TextView>(R.id.text_BornUser)
@@ -57,8 +50,8 @@ class Profile_Fragment : Fragment() {
         val idUser = activity?.intent!!.getStringExtra("iduser").toString()
         val profile = db.profile(idUser.toInt())
 
-        val parser = SimpleDateFormat("yyyy-MM-dd", Locale.US)
-        val formatter = SimpleDateFormat("dd-MM-yyyy", Locale.US)
+        val parser = SimpleDateFormat("yyyy-MM-dd", Locale.UK)
+        val formatter = SimpleDateFormat("dd-MM-yyyy", Locale.UK)
         val date = formatter.format(parser.parse(profile[3]))
 
         if (tvNama != null) {

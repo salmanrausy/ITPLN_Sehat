@@ -81,6 +81,7 @@
                     android:layout_gravity="center"/>
 
                 <Spinner
+                    android:focusable="true"
                     android:id="@+id/spinner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -143,6 +144,7 @@
                 android:elevation="50dp">
 
                 <EditText
+                    android:id="@+id/edtKeterangan"
                     android:layout_width="325dp"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
@@ -179,7 +181,7 @@
                         android:layout_gravity="center"
                         android:fontFamily="@font/cantarell"
                         android:gravity="center"
-                        android:text="@string/save"
+                        android:hint="@string/save"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />

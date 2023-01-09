@@ -37,8 +37,8 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
             val insertdata = "INSERT INTO dokter (nama,spesialis)VALUES " +
                     "('Dr. Banner ','Jantung')," +
                     "('Dr. Kamaludin ','Paru')," +
-                    "('Dr. Kehfa ','otak dan sistem saraf')," +
-                    "('Dr. Lucille' ,'Mataa')," +
+                    "('Dr. Kehfa ','Otak dan Sistem Saraf')," +
+                    "('Dr. Lucille' ,'Mata')," +
                     "('Dr. Meisya ','Anak')," +
                     "('Dr. Strange' ,'Tulang'); "
             val insertdatauser = "INSERT INTO user (nama,email,nomor,tglLahir,password)VALUES ('Admin','admin','0834637322' ,'2001-12-09','admin'); "
@@ -67,6 +67,19 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
                 Toast.makeText(context, "ADD ACCOUNT SUCCESS", Toast.LENGTH_SHORT).show()
         }
 
+        fun insertJadwal (jadwal: Jadwal, idUser: String?) {
+            val cv = ContentValues()
+            cv.put("id_dokter", jadwal.id_dokter)
+            cv.put("kunjungan",jadwal.kunjungan)
+            cv.put("keterangan",jadwal.keterangan)
+            cv.put("id_user", idUser)
+            val result = db.insert("jadwal", null, cv)
+            if (result == -1.toLong())
+                Toast.makeText(context, "FAILED", Toast.LENGTH_SHORT).show()
+            else
+                Toast.makeText(context, "ADD ACCOUNT SUCCESS", Toast.LENGTH_SHORT).show()
+        }
+
         @SuppressLint("Range")
         fun checkUser(email: String, password: String): Int {
             val query = "SELECT * FROM user WHERE email='$email' AND password='$password'"
@@ -74,6 +87,7 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
             if (rs.moveToFirst()) {
                 val idUser = rs.getInt(rs.getColumnIndex("id_user"))
                 rs.close()
+
                 return idUser
             }
             return -1
@@ -103,8 +117,8 @@ class DataHelper (var context: Context) : SQLiteOpenHelper(context,
                 val email = rs.getString(rs.getColumnIndex("email"))
                 val nomor = rs.getString(rs.getColumnIndex("nomor"))
                 val tgl_lahir = rs.getString(rs.getColumnIndex("tglLahir"))
-                val parser = SimpleDateFormat("yyyy-MM-dd", Locale.US)
-                val formatter = SimpleDateFormat("dd-MM-yyyy", Locale.US)
+                val parser = SimpleDateFormat("yyyy-MM-dd", Locale.UK)
+                val formatter = SimpleDateFormat("dd-MM-yyyy", Locale.UK)
                 val date = parser.parse(tgl_lahir)?.let { formatter.format(it) }
                 rs.close()
                 return arrayOf(nama,email,nomor,date.toString())

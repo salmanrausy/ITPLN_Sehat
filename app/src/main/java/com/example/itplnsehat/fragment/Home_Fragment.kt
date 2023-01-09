@@ -7,12 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.example.itplnsehat.R
-import com.example.itplnsehat.Spesialis_Kardiologi
-import com.example.itplnsehat.Spesialis_Pulmonologi
-import com.example.itplnsehat.databinding.FragmentHomeBinding
+import com.example.itplnsehat.view.Spesialis_Kardiologi
+import com.example.itplnsehat.view.Spesialis_Pulmonologi
 import com.example.itplnsehat.view.BuatJadwal
-import kotlinx.android.synthetic.main.fragment_home_.*
 
 class Home_Fragment : Fragment() {
 
@@ -20,32 +19,35 @@ class Home_Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val bind = FragmentHomeBinding.inflate(layoutInflater)
-
-        bind.txtBuatJanji.setOnClickListener{
-            val intent = Intent(this@Home_Fragment.requireContext(), BuatJadwal::class.java)
-            startActivity(intent)
-        }
-
-        bind.txtJantung.setOnClickListener{
-            val intent = Intent(this@Home_Fragment.requireContext(), Spesialis_Kardiologi::class.java)
-            startActivity(intent)
-        }
-
-        bind.txtParu.setOnClickListener{
-            val intent = Intent(this@Home_Fragment.requireContext(), Spesialis_Pulmonologi::class.java)
-            startActivity(intent)
-        }
-
-        return bind.root
+        return inflater.inflate(R.layout.fragment_home_, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initialized()
+    }
 
+    fun initialized() {
+        val idUser = activity?.intent!!.getStringExtra("iduser").toString()
+        view?.findViewById<TextView>(R.id.txt_BuatJanji)?.setOnClickListener {
+            val bundle = Bundle()
+            val intent = Intent(this@Home_Fragment.requireContext(), BuatJadwal::class.java)
+            bundle.putString("iduser", idUser)
+            intent.putExtras(bundle)
+            startActivity(intent)
+        }
 
+        view?.findViewById<TextView>(R.id.txtJantung)?.setOnClickListener {
+            val intent = Intent(this@Home_Fragment.requireContext(), Spesialis_Kardiologi::class.java)
+            startActivity(intent)
+        }
 
-        Txt_Alamat.setOnClickListener{
+        view?.findViewById<TextView>(R.id.txtParu)?.setOnClickListener {
+            val intent = Intent(this@Home_Fragment.requireContext(), Spesialis_Pulmonologi::class.java)
+            startActivity(intent)
+        }
+
+        view?.findViewById<TextView>(R.id.Txt_Alamat)?.setOnClickListener{
             val m  = Intent(Intent.ACTION_VIEW)
             m.setData(Uri.parse("https://goo.gl/maps/sQdQ6jjwSBZiM18L6"))
             startActivity(m)
