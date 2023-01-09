@@ -60,7 +60,7 @@ class BuatJadwal : AppCompatActivity(){
                 position: Int,
                 id: Long
             ) {
-                getIdDokter = position + 2
+                getIdDokter = position
 //                HasilPilihan.setText("Anda Memilih : " + list_Doctor[position])
 //                Toast.makeText(applicationContext, "Anda Memilih : " + list_Doctor[position], Toast.LENGTH_SHORT).show()
             }
